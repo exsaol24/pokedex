@@ -1,0 +1,8 @@
+.titulo
+{
+    font-family: Pokemon;
+}
+@font-face {
+    font-family: Pokemon;
+    src: url(Pokemon\ Solid.ttf);
+}
