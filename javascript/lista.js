@@ -23,19 +23,21 @@ function verPokemon(poke) {
     const div = document.createElement("div");
     div.classList.add("pokemon");
     div.innerHTML = `
-            <div class="image">
-                <img src="${poke.sprites.front_default}" alt="${poke.name}">
-            </div>
-            <div class="info">
-                <div class="types">
-                    ${tipos}
+            <a class="enlace" href="html/detalles.html">
+                <div class="image">
+                    <img src="${poke.sprites.front_default}" alt="${poke.name}">
                 </div>
-                <div class="container">
-                    <p class="id">#${poke.id}</p>
-                    <h2 class="name">${poke.name}</h2>
+                <div class="info">
+                    <div class="types">
+                        ${tipos}
+                    </div>
+                    <div class="container">
+                        <p class="id">#${poke.id}</p>
+                        <h2 class="name">${poke.name}</h2>
+                    </div>
+                    
                 </div>
-                
-            </div>
+            </a>
             `;
     pokemonList.append(div);
 }
