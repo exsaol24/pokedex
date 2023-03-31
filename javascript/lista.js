@@ -1,25 +1,22 @@
 const pokemonList = document.querySelector("#pokemon-list");
 var URL = "https://pokeapi.co/api/v2/pokemon/";
 
-for(var i = 1; i <= 151; i++)
-{
+for (var i = 1; i <= 151; i++) {
     fetch(URL + i)
         .then((response) => response.json())
         .then(datos => verPokemon(datos))
 }
 
-function verPokemon(poke)
-{
+
+function verPokemon(poke) {
     var tipos = poke.types.map(type => `<p class="type ${type.type.name}">${type.type.name}</p>`);
     tipos = tipos.join('');
-    
+
     var pokeId = poke.id.toString();
-    if(pokeId.length === 1)
-    {
+    if (pokeId.length === 1) {
         pokeId = "00" + pokeId;
     }
-    else if(pokeId.length === 2)
-    {
+    else if (pokeId.length === 2) {
         pokeId = "0" + pokeId;
     }
 
@@ -27,16 +24,17 @@ function verPokemon(poke)
     div.classList.add("pokemon");
     div.innerHTML = `
             <div class="image">
-                <img src="${poke.sprites.other.home.front_default}" alt="${poke.name}">
+                <img src="${poke.sprites.front_default}" alt="${poke.name}">
             </div>
             <div class="info">
+                <div class="types">
+                    ${tipos}
+                </div>
                 <div class="container">
                     <p class="id">#${poke.id}</p>
                     <h2 class="name">${poke.name}</h2>
                 </div>
-                <div class="types">
-                    ${tipos}
-                </div>
+                
             </div>
             `;
     pokemonList.append(div);
