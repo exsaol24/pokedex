@@ -1,0 +1,29 @@
+*{
+    color: black;
+    font-family: sans-serif;
+}
+body{
+    background: linear-gradient(to right, rgb(147, 248, 176), rgb(244, 198, 146) , rgb(157, 237, 246));
+    color: rgb(255, 255, 255);
+    margin: 0;
+    min-height: 100vh;
+}
+main{
+    padding: 2rem;
+    max-width: 1150px;
+    margin: auto;
+}
+.title{
+    margin: auto;
+    font-size: 40px;
+    text-align: center;
+}
+.title1{
+    font-family: Pokemon;
+    text-decoration: none;
+}
+
+@font-face{
+    font-family: Pokemon;
+    src: url(../css/fuentes/Pokemon\ Solid.ttf);
+}
