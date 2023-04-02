@@ -20,6 +20,8 @@ main{
 .title1{
     font-family: Pokemon;
     text-decoration: none;
+    -webkit-text-stroke: 2.5px rgb(50, 100, 176);
+    color: rgb(255, 204, 1);
 }
 
 @font-face{

@@ -103,7 +103,7 @@
 }
 .all-pokemon{
     display: grid;
-    grid-template-columns: 1fr /*1fr 1fr 1fr*/;
+    grid-template-columns: 1fr;
     gap: 15px;
 }
 
@@ -130,6 +130,9 @@
     padding: 1rem;
     text-transform: capitalize;
 }
+/*.pokemon:hover{
+    background-color: var(--type-fire);
+}*/
 .info{
     display: flex;
     flex-direction: column;
@@ -166,7 +169,7 @@
 }
 .type{
     box-shadow: 0 0 7px 0px rgb(0, 0, 0);
-    outline: auto black;
+    /*outline: auto black;*/
     padding: 0.25rem 0.5rem;
     border-radius: 5px;
 }
