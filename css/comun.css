@@ -26,18 +26,17 @@ nav{
     /*text-shadow: 4px 4px 4px 4px red;*/
 }
 .barra{
+    border-radius: 15px;
+    max-width: 1115px;
+    margin: auto;
     background-color: white;
     border: 1px solid black;
     display: flex;
     padding: 1rem;
 }
 #dark-mode{
-    margin-left: 25%;
-    margin-right: 19%;
-}
-#search{
-    margin-left: 19%;
-    margin-right: 25%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 @font-face{
