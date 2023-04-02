@@ -14,22 +14,20 @@ for (var i = 1; i <= 151; i++) {
 
     const div = document.createElement("div");
     div.classList.add("pokemon");
-
-
+    
     div.innerHTML = `
             <a class="enlace" href="html/detalles.html">
                 <div class="image">
                     <img src="${poke.sprites.front_default}" alt="${poke.name}">
                 </div>
                 <div class="info">
-                    <div class="types">
-                        ${tipos}
-                    </div>
                     <div class="container">
                         <p class="id">#${id0Izqda(poke)}</p>
                         <h2 class="name">${poke.name}</h2>
                     </div>
-                    
+                    <div class="types">
+                        ${tipos}
+                    </div>
                 </div>
             </a>
             `;

@@ -2,6 +2,10 @@
     color: black;
     font-family: sans-serif;
 }
+:root{
+
+}
+
 .normal{
     background-color: rgb(159, 161, 159);
     color: white;
@@ -112,7 +116,7 @@ main{
 .all-pokemon{
     display: grid;
     grid-template-columns: 1fr /*1fr 1fr 1fr*/;
-    gap: 1rem;
+    gap: 15px;
 }
 
 @media screen and (min-width: 475px){
@@ -133,15 +137,14 @@ main{
 
 .pokemon{
     border-radius: 15px;
-    background-color: #f7f7f7;
+    background-color: rgb(240, 240, 240);
     box-shadow: 0 0 20px -5px rgb(0, 0, 0);
-    padding-block: 1rem;
+    padding: 1rem;
     text-transform: uppercase;
 }
 .info{
     display: flex;
     flex-direction: column;
-    /*gap: 0.5rem;*/
     padding-inline: 1rem;
     align-items: center;
     text-align: center;
@@ -149,15 +152,19 @@ main{
 .container{
     display: flex;
     align-items: center;
-    column-gap: 0.5rem;
+    column-gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
 }
 .id{
-    background-color: #ececec;
+    background: radial-gradient( rgb(255, 255, 255),  rgb(240, 240, 240), rgb(180, 180, 180));
+    box-shadow: 0 0 7.5px 0px rgb(0, 0, 0);
+    color: black;
+    /*background-color: ;*/
     padding: 0.25rem 0.5rem;
     border-radius: 5px;
     font-size: 0.75rem;
+    font-weight: 800;
 }
 .name{
     font-size: 20px;
@@ -171,6 +178,7 @@ main{
     justify-content: center;
 }
 .type{
+    box-shadow: 0 0 5px 0px rgb(0, 0, 0);
     padding: 0.25rem 0.5rem;
     border-radius: 5px;
 }
