@@ -12,17 +12,32 @@ main{
     max-width: 1150px;
     margin: auto;
 }
-.title{
+nav{
+    display: block;
     margin: auto;
     font-size: 45px;
     text-align: center;
 }
-.title1{
+.title{
     font-family: Pokemon;
     text-decoration: none;
     -webkit-text-stroke: 2.5px rgb(50, 100, 176);
     color: rgb(255, 204, 1);
     /*text-shadow: 4px 4px 4px 4px red;*/
+}
+.barra{
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    padding: 1rem;
+}
+#dark-mode{
+    margin-left: 25%;
+    margin-right: 19%;
+}
+#search{
+    margin-left: 19%;
+    margin-right: 25%;
 }
 
 @font-face{

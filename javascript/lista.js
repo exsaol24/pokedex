@@ -45,21 +45,3 @@ function id0Izqda(poke) {
 
     return pokeId;
 }
-
-/*
-    <div class="pokemon">
-        <div class="image">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu">
-        </div>
-        <div class="info">
-            <div class="container">
-                <p class="id">#025</p>
-                <h2 class="name">Pikachu</h2>
-            </div>
-            <div class="types">
-                <p class="type electric">Eléctrico</p>
-                <p class="type dragon">Eléctrico</p>
-            </div>
-        </div>
-    </div>
-*/
