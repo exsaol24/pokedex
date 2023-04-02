@@ -3,76 +3,76 @@
     font-family: sans-serif;
 }
 .normal{
-    background-color: #a8a878;
-    color: black;
+    background-color: rgb(159, 161, 159);
+    color: white;
 }
 .fire{
-    background-color: #F08030;
-    color: black;
+    background-color: rgb(230, 40, 41);
+    color: white;
 }
 .water{
-    background-color: #6890F0;
+    background-color: rgb(41, 128, 239);
     color: white;
 }
 .grass{
-    background-color: #78C850;
-    color: black;
+    background-color: rgb(63, 161, 41);
+    color: white;
 }
 .electric{
-    background-color: #F8D030;
-    color: black;
+    background-color: rgb(250, 192, 0);
+    color: white;
 }
 .ice{
-    background-color: #98D8D8;
-    color: black;
+    background-color: rgb(63, 216, 255);
+    color: white;
 }
 .fighting{
-    background-color: #C03028;
+    background-color: rgb(255, 128, 0);
     color: white;
 }
 .poison{
-    background-color: #A040A0;
+    background-color: rgb(143, 65, 203);
     color: white;
 }
 .ground{
-    background-color: #E0C068;
-    color: black;
+    background-color: rgb(145, 81, 33);
+    color: white;
 }
 .flying{
-    background-color: #A890F0;
-    color: black;
+    background-color: rgb(129, 185, 239);
+    color: white;
 }
 .psychic{
-    background-color: #F85888;
-    color: black;
+    background-color: rgb(239, 65, 121);
+    color: white;
 }
 .bug{
-    background-color: #A8B820;
-    color: black;
+    background-color: rgb(145, 161, 25);
+    color: white;
 }
 .rock{
-    background-color: #B8A038;
-    color: black;
+    background-color: rgb(175, 169, 129);
+    color: white;
 }
 .ghost{
-    background-color: #705898;
+    background-color: rgb(112, 65, 112);
     color: white;
 }
 .dark{
-    background-color: #705848;
+    background-color: rgb(80, 65, 63);
     color: white;
 }
 .dragon{
-    background-color: #7038F8;
+    background-color: rgb(80, 97, 225);
     color: white;
 }
 .steel{
-    background-color: #B8B8D0;
-    color: black;
+    background-color: rgb(96, 161, 184);
+    color: white;
 }
 .fairy{
-    background-color: #F0B6BC;
-    color: black;
+    background-color: rgb(239, 113, 239);
+    color: white;
 }
 body{
     background: linear-gradient(to right, rgb(147, 248, 176), rgb(244, 198, 146) , rgb(157, 237, 246));

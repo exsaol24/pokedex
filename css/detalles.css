@@ -13,3 +13,17 @@ main{
     max-width: 1150px;
     margin: auto;
 }
+.title{
+    margin: auto;
+    font-size: 40px;
+    text-align: center;
+}
+.title1{
+    font-family: Pokemon;
+    text-decoration: none;
+}
+
+@font-face{
+    font-family: Pokemon;
+    src: url(../css/fuentes/Pokemon\ Solid.ttf);
+}

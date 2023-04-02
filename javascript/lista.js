@@ -1,27 +1,21 @@
 const pokemonList = document.querySelector("#pokemon-list");
-var URL = "https://pokeapi.co/api/v2/pokemon/";
+const URL = "https://pokeapi.co/api/v2/pokemon/";
 
 for (var i = 1; i <= 151; i++) {
     fetch(URL + i)
-        .then((response) => response.json())
-        .then(datos => verPokemon(datos))
+        .then(respuesta => respuesta.json())
+        .then(respuesta => verPokemon(respuesta))
 }
 
 
-function verPokemon(poke) {
+/*async*/ function verPokemon(poke) {
     var tipos = poke.types.map(type => `<p class="type ${type.type.name}">${type.type.name}</p>`);
     tipos = tipos.join('');
 
-    var pokeId = poke.id.toString();
-    if (pokeId.length === 1) {
-        pokeId = "00" + pokeId;
-    }
-    else if (pokeId.length === 2) {
-        pokeId = "0" + pokeId;
-    }
-
     const div = document.createElement("div");
     div.classList.add("pokemon");
+
+
     div.innerHTML = `
             <a class="enlace" href="html/detalles.html">
                 <div class="image">
@@ -32,7 +26,7 @@ function verPokemon(poke) {
                         ${tipos}
                     </div>
                     <div class="container">
-                        <p class="id">#${poke.id}</p>
+                        <p class="id">#${id0Izqda(poke)}</p>
                         <h2 class="name">${poke.name}</h2>
                     </div>
                     
@@ -40,6 +34,18 @@ function verPokemon(poke) {
             </a>
             `;
     pokemonList.append(div);
+}
+
+function id0Izqda(poke) {
+    var pokeId = poke.id.toString();
+    if (pokeId.length === 1) {
+        pokeId = "00" + pokeId;
+    }
+    else if (pokeId.length === 2) {
+        pokeId = "0" + pokeId;
+    }
+
+    return pokeId;
 }
 
 /*
