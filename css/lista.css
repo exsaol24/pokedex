@@ -166,10 +166,185 @@
 }
 .type{
     box-shadow: 0 0 7px 0px rgb(0, 0, 0);
-    /*outline: auto black;*/
+    outline: auto black;
     padding: 0.25rem 0.5rem;
     border-radius: 5px;
 }
 .enlace{
     text-decoration: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+    //Modo Oscuro
+
+:root{
+--type-normal: rgb(159, 161, 159);
+--type-fire: rgb(230, 40, 41);
+--type-water: rgb(41, 128, 239);
+--type-grass: rgb(63, 161, 41);
+--type-electric: rgb(250, 192, 0);
+--type-ice: rgb(63, 216, 255);
+--type-fighting: rgb(255, 128, 0);
+--type-poison: rgb(143, 65, 203);
+--type-ground: rgb(145, 81, 33);
+--type-flying: rgb(129, 185, 239);
+--type-psychic: rgb(239, 65, 121);
+--type-bug: rgb(145, 161, 25);
+--type-rock: rgb(175, 169, 129);
+--type-ghost: rgb(112, 65, 112);
+--type-dark: rgb(80, 65, 63);
+--type-dragon: rgb(80, 97, 225);
+--type-stell: rgb(96, 161, 184);
+--type-fairy: rgb(239, 113, 239);
+}
+
+.normal{
+    background-color: var(--type-normal);
+    color: black;
+}
+.fire{
+    background-color: var(--type-fire);
+    color: black;
+}
+.water{
+    background-color: var(--type-water);
+    color: black;
+}
+.grass{
+    background-color: var(--type-grass);
+    color: black;
+}
+.electric{
+    background-color: var(--type-electric);
+    color: black;
+}
+.ice{
+    background-color: var(--type-ice);
+    color: white;
+}
+.fighting{
+    background-color: var(--type-fighting);
+    color: black;
+}
+.poison{
+    background-color: var(--type-poison);
+    color: black;
+}
+.ground{
+    background-color: var(--type-ground);
+    color: black;
+}
+.flying{
+    background-color: var(--type-flying);
+    color: black;
+}
+.psychic{
+    background-color: var(--type-psychic);
+    color: black;
+}
+.bug{
+    background-color: var(--type-bug);
+    color: black;
+}
+.rock{
+    background-color: var(--type-rock);
+    color: black;
+}
+.ghost{
+    background-color: var(--type-ghost);
+    color: black;
+}
+.dark{
+    background-color: var(--type-dark);
+    color: black;
+}
+.dragon{
+    background-color: var(--type-dragon);
+    color: black;
+}
+.steel{
+    background-color: var(--type-stell);
+    color: black;
+}
+.fairy{
+    background-color: var(--type-fairy);
+    color: black;
+}
+
+body{
+    background: linear-gradient(to right, rgb(14, 82, 34), rgb(92, 58, 19) , rgb(19, 80, 86));
+    margin: 0;
+    min-height: 100vh;
+}
+.pokemon{
+    border-radius: 15px;
+    background-color: rgb(15, 15, 15);
+    box-shadow: 0 0 20px -5px rgb(255, 255, 255);
+    padding: 1rem;
+    text-transform: capitalize;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1rem;
+    align-items: center;
+    text-align: center;
+}
+.container{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.id{
+    background: radial-gradient( rgb(0, 0, 0),  rgb(15, 15, 15), rgb(75, 75, 75));
+    box-shadow: 0 0 7.5px 0px rgb(255, 255, 255);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+.name{
+    font-size: 20px;
+    color: white;
+}
+.types{
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    flex-wrap: wrap;
+    text-transform: uppercase;
+}
+.type{
+    box-shadow: 0 0 7px 0px rgb(255, 255, 255);
+    outline: auto;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+}
+.enlace{
+    text-decoration: none;
+}
+.title1{
+    font-family: Pokemon;
+    text-decoration: none;
+    color: white;
+}
+*/
