@@ -132,7 +132,8 @@
     /*outline: solid 1px;*/
 }
 .pokemon:hover{
-    background-color: rgb(147, 248, 176);
+    background: linear-gradient(to bottom right, rgb(248, 142, 142), rgb(251, 225, 142), rgb(163, 253, 142),
+    rgb(146, 192, 253), rgb(255, 147, 255), rgb(208, 148, 254));
 }
 .info{
     display: flex;
@@ -243,7 +244,7 @@
 }
 .ice{
     background-color: var(--type-ice);
-    color: white;
+    color: black;
 }
 .fighting{
     background-color: var(--type-fighting);
@@ -293,7 +294,6 @@
     background-color: var(--type-fairy);
     color: black;
 }
-
 body{
     background: linear-gradient(to right, rgb(14, 82, 34), rgb(92, 58, 19) , rgb(19, 80, 86));
     margin: 0;
@@ -302,9 +302,13 @@ body{
 .pokemon{
     border-radius: 15px;
     background-color: rgb(15, 15, 15);
-    box-shadow: 0 0 20px -5px rgb(255, 255, 255);
+    box-shadow: 0 0 20px -5px rgb(240, 240, 240);
     padding: 1rem;
     text-transform: capitalize;
+}
+.pokemon:hover{
+    background: linear-gradient(to bottom right, rgb(248, 142, 142), rgb(251, 225, 142), rgb(163, 253, 142),
+    rgb(146, 192, 253), rgb(255, 147, 255), rgb(208, 148, 254));
 }
 .info{
     display: flex;
@@ -349,10 +353,5 @@ body{
 }
 .enlace{
     text-decoration: none;
-}
-.title1{
-    font-family: Pokemon;
-    text-decoration: none;
-    color: white;
 }
 */
