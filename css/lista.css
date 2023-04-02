@@ -182,7 +182,7 @@
     border-radius: 15px;
     max-width: 1115px;
     margin: auto;
-    background-color: white;
+    background-color: rgb(240, 240, 240);
     border: 1px solid black;
     display: flex;
     padding: 1rem;
@@ -406,7 +406,7 @@ body{
     border-radius: 15px;
     max-width: 1115px;
     margin: auto;
-    background-color: black;
+    background-color: rgb(15, 15, 15);
     border: 1px solid white;
     display: flex;
     padding: 1rem;
