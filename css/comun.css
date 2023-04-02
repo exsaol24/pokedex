@@ -25,15 +25,6 @@ nav{
     color: rgb(255, 204, 1);
     /*text-shadow: 4px 4px 4px 4px red;*/
 }
-.barra{
-    border-radius: 15px;
-    max-width: 1115px;
-    margin: auto;
-    background-color: white;
-    border: 1px solid black;
-    display: flex;
-    padding: 1rem;
-}
 #dark-mode{
     margin-left: 20%;
     margin-right: 20%;
