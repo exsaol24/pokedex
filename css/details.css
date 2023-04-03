@@ -165,10 +165,11 @@
     font-weight: 800;
     flex-wrap: wrap;
     text-transform: uppercase;
+    -webkit-text-stroke: 1px black;
 }
 .type{
     box-shadow: 0 0 7px 0px rgb(0, 0, 0);
-    /*outline: auto black;*/
+    outline: auto black;
     padding: 0.25rem 0.5rem;
     border-radius: 5px;
 }
@@ -177,7 +178,6 @@
     font-size: 0.75rem;
     font-weight: 800;
     box-shadow: 0 0 7px 0px rgb(0, 0, 0);
-    /*outline: auto black;*/
     padding: 0.5rem 0.5rem;
     border-radius: 5px;
 }
@@ -186,7 +186,6 @@
     font-size: 0.75rem;
     font-weight: 800;
     box-shadow: 0 0 7px 0px rgb(0, 0, 0);
-    /*outline: auto black;*/
     padding: 0.5rem 0.5rem;
     border-radius: 5px;
 }

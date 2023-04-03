@@ -1,0 +1,55 @@
+:root{
+    --type-normal: rgb(159, 161, 159);
+    --type-fire: rgb(230, 40, 41);
+    --type-water: rgb(41, 128, 239);
+    --type-grass: rgb(63, 161, 41);
+    --type-electric: rgb(250, 192, 0);
+    --type-ice: rgb(63, 216, 255);
+    --type-fighting: rgb(255, 128, 0);
+    --type-poison: rgb(143, 65, 203);
+    --type-ground: rgb(145, 81, 33);
+    --type-flying: rgb(129, 185, 239);
+    --type-psychic: rgb(239, 65, 121);
+    --type-bug: rgb(145, 161, 25);
+    --type-rock: rgb(175, 169, 129);
+    --type-ghost: rgb(112, 65, 112);
+    --type-dark: rgb(80, 65, 63);
+    --type-dragon: rgb(80, 97, 225);
+    --type-steel: rgb(96, 161, 184);
+    --type-fairy: rgb(239, 113, 239);
+}
+*{
+    color: black;
+    font-family: sans-serif;
+}
+body{
+    background: linear-gradient(to right, rgb(147, 248, 176), rgb(244, 198, 146) , rgb(157, 237, 246));
+    margin: 0;
+    min-height: 100vh;
+}
+main{
+    padding: 2rem;
+    max-width: 1150px;
+    margin: auto;
+}
+nav{
+    display: block;
+    margin: auto;
+    font-size: 45px;
+    text-align: center;
+}
+.title{
+    font-family: Pokemon;
+    text-decoration: none;
+    -webkit-text-stroke: 2.5px rgb(50, 100, 176);
+    color: rgb(255, 204, 1);
+}
+#dark-mode{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+@font-face{
+    font-family: Pokemon;
+    src: url(../css/fonts/Pokemon\ Solid.ttf);
+}
