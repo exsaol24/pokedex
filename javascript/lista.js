@@ -43,8 +43,6 @@ for (var i = 1; i <= 151; i++) {
     div5.innerHTML = `${tipos}`;
     */
 
-
-    
     div1.innerHTML = `
             <a class="enlace" href="html/detalles.html">
                 <div class="image">

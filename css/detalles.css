@@ -1,0 +1,195 @@
+:root{
+    --type-normal: rgb(159, 161, 159);
+    --type-fire: rgb(230, 40, 41);
+    --type-water: rgb(41, 128, 239);
+    --type-grass: rgb(63, 161, 41);
+    --type-electric: rgb(250, 192, 0);
+    --type-ice: rgb(63, 216, 255);
+    --type-fighting: rgb(255, 128, 0);
+    --type-poison: rgb(143, 65, 203);
+    --type-ground: rgb(145, 81, 33);
+    --type-flying: rgb(129, 185, 239);
+    --type-psychic: rgb(239, 65, 121);
+    --type-bug: rgb(145, 161, 25);
+    --type-rock: rgb(175, 169, 129);
+    --type-ghost: rgb(112, 65, 112);
+    --type-dark: rgb(80, 65, 63);
+    --type-dragon: rgb(80, 97, 225);
+    --type-stell: rgb(96, 161, 184);
+    --type-fairy: rgb(239, 113, 239);
+}
+
+.normal{
+    background-color: var(--type-normal);
+    color: white;
+}
+.fire{
+    background-color: var(--type-fire);
+    color: white;
+}
+.water{
+    background-color: var(--type-water);
+    color: white;
+}
+.grass{
+    background-color: var(--type-grass);
+    color: white;
+}
+.electric{
+    background-color: var(--type-electric);
+    color: white;
+}
+.ice{
+    background-color: var(--type-ice);
+    color: white;
+}
+.fighting{
+    background-color: var(--type-fighting);
+    color: white;
+}
+.poison{
+    background-color: var(--type-poison);
+    color: white;
+}
+.ground{
+    background-color: var(--type-ground);
+    color: white;
+}
+.flying{
+    background-color: var(--type-flying);
+    color: white;
+}
+.psychic{
+    background-color: var(--type-psychic);
+    color: white;
+}
+.bug{
+    background-color: var(--type-bug);
+    color: white;
+}
+.rock{
+    background-color: var(--type-rock);
+    color: white;
+}
+.ghost{
+    background-color: var(--type-ghost);
+    color: white;
+}
+.dark{
+    background-color: var(--type-dark);
+    color: white;
+}
+.dragon{
+    background-color: var(--type-dragon);
+    color: white;
+}
+.steel{
+    background-color: var(--type-stell);
+    color: white;
+}
+.fairy{
+    background-color: var(--type-fairy);
+    color: white;
+}
+
+.image{
+    padding-inline: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.image img{
+    width: 100%;
+    max-width: 150px;
+}
+/*
+@media screen and (min-width: 450px){
+    .all-pokemon{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (min-width: 700px){
+    .all-pokemon{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media screen and (min-width: 925px){
+    .all-pokemon{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+*/
+.pokemon{
+    margin: auto;
+    border-radius: 15px;
+    background-color: rgb(240, 240, 240);
+    box-shadow: 0 0 20px -5px rgb(0, 0, 0);
+    padding: 1rem;
+    text-transform: capitalize;
+    /*outline: solid 1px;*/
+    max-width: 300px;
+}
+.pokemon:hover{
+    background: linear-gradient(to bottom right, rgb(248, 142, 142), rgb(251, 225, 142), rgb(163, 253, 142),
+    rgb(146, 192, 253), rgb(255, 147, 255), rgb(208, 148, 254));
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1rem;
+    align-items: center;
+    text-align: center;
+}
+.container{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.id{
+    background: radial-gradient( rgb(255, 255, 255),  rgb(240, 240, 240), rgb(180, 180, 180));
+    box-shadow: 0 0 7.5px 0px rgb(0, 0, 0);
+    color: black;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+.name{
+    font-size: 20px;
+}
+.types{
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    flex-wrap: wrap;
+    text-transform: uppercase;
+}
+.type{
+    box-shadow: 0 0 7px 0px rgb(0, 0, 0);
+    /*outline: auto black;*/
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+}
+.peso{
+    background-color: rgb(240, 240, 240);
+    font-size: 0.75rem;
+    font-weight: 800;
+    box-shadow: 0 0 7px 0px rgb(0, 0, 0);
+    /*outline: auto black;*/
+    padding: 0.5rem 0.5rem;
+    border-radius: 5px;
+}
+.altura{
+    background-color: rgb(240, 240, 240);
+    font-size: 0.75rem;
+    font-weight: 800;
+    box-shadow: 0 0 7px 0px rgb(0, 0, 0);
+    /*outline: auto black;*/
+    padding: 0.5rem 0.5rem;
+    border-radius: 5px;
+}
+.stats{
+    text-align: left;
+}
