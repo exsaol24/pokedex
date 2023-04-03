@@ -60,9 +60,6 @@ nav{
     width: 1.75vh;
     margin: auto;
 }
-::-webkit-scrollbar-track{
-    background-color: transparent;
-}
 ::-webkit-scrollbar-thumb{
     background: linear-gradient(to right bottom, rgb(254, 161, 161), rgb(254, 233, 161), rgb(177, 252, 160),
     rgb(160, 201, 254), rgb(254, 160, 254), rgb(214, 162, 254));
