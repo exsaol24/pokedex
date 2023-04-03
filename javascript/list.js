@@ -1,10 +1,13 @@
-const pokemonList = document.querySelector("#pokemon-list");
-const URL = "https://pokeapi.co/api/v2/pokemon/";
+var pokemonList = document.getElementById("all-pokemon");
+var URL = "https://pokeapi.co/api/v2/pokemon/";
+
+var arrayPokemon = [];
 
 async function getPokemon() {
     for (var i = 1; i <= 151; i++) {
         var request = await fetch(URL + i);
         var data = await request.json();
+        await arrayPokemon.push(data);
         await viewPokemon(data);
     }
 }
@@ -16,17 +19,20 @@ function viewPokemon(poke) {
     var div1 = document.createElement("div");
     div1.classList.add("pokemon");
 
-    /*
     var a = document.createElement("a");
     a.classList.add("enlace");
+    /*a.setAttribute("target", "blank");*/
+    a.setAttribute("href", "../html/details.html");
 
     var div2 = document.createElement("div");
     div2.classList.add("image");
 
     var img = document.createElement("img");
-    img.setAttribute("src", "poke.sprites.front_default");
-    img.setAttribute("alt", "poke.name");
-    
+    img.src = poke.sprites.front_default;
+    /*img.src = poke.sprites.other["official-artwork"].front_default;*/
+    /*img.src = poke.sprites.other.home.front_default;*/
+    img.alt = poke.name;
+
     var div3 = document.createElement("div");
     div3.classList.add("info");
 
@@ -44,34 +50,17 @@ function viewPokemon(poke) {
     var div5 = document.createElement("div");
     div5.classList.add("types");
     div5.innerHTML = `${tipos}`;
-    */
-
-    div1.innerHTML = `
-            <a class="enlace" href="html/details.html">
-                <div class="image">
-                    <img src="${poke.sprites.front_default}" alt="${poke.name}">
-                </div>
-                <div class="info">
-                    <div class="container">
-                        <p class="id">#${id0Izqda(poke)}</p>
-                        <h2 class="name">${poke.name}</h2>
-                    </div>
-                    <div class="types">
-                        ${tipos}
-                    </div>
-                </div>
-            </a>
-            `;
 
     pokemonList.appendChild(div1);
-    /*div1.appendChild(a);
+    div1.appendChild(a);
     a.appendChild(div2);
     div2.appendChild(img);
     a.appendChild(div3);
     div3.appendChild(div4);
     div4.appendChild(p);
     div4.appendChild(h2);
-    div3.appendChild(div5)*/
+
+    div3.appendChild(div5) /* Añadir tipos */
 }
 
 function id0Izqda(poke) {
@@ -85,3 +74,21 @@ function id0Izqda(poke) {
 
     return pokeId;
 }
+/*
+function traducirTipos() {
+    var tipos;
+
+    for (var i = 0; i < 2; i++) {
+
+    }
+}*/
+/*
+function cogerTipos(array) {
+    var arrayPokemon = [];
+
+    for (var i = 0; i < array.length; i++) {
+        for (var j = 0; j < array.; j++) {
+            
+        }
+    }
+}*/

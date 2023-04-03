@@ -80,9 +80,9 @@
     width: 100%;
     max-width: 150px;
 }
-.all-pokemon{
+#all-pokemon{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 15px;
 }
 
@@ -117,6 +117,10 @@
     background: linear-gradient(to bottom right, rgb(254, 161, 161), rgb(254, 233, 161), rgb(177, 252, 160),
     /*rgb(230, 230, 230),*/ rgb(160, 201, 254), rgb(254, 160, 254), rgb(214, 162, 254));
 }
+.barra:hover{
+    background: linear-gradient(to right, rgb(254, 161, 161), rgb(254, 233, 161), rgb(177, 252, 160),
+    rgb(230, 230, 230), rgb(160, 201, 254), rgb(254, 160, 254), rgb(214, 162, 254));
+}
 .info{
     display: flex;
     flex-direction: column;
@@ -142,6 +146,7 @@
 }
 .name{
     font-size: 20px;
+    /*font-weight: 800;*/
 }
 .types{
     display: flex;

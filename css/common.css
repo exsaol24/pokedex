@@ -43,6 +43,8 @@ nav{
     text-decoration: none;
     -webkit-text-stroke: 2.5px rgb(50, 100, 176);
     color: rgb(255, 204, 1);
+    text-shadow: 0px 0px 15px white;
+    letter-spacing: 0.5vh;
 }
 #dark-mode{
     margin-left: 20%;
@@ -52,4 +54,17 @@ nav{
 @font-face{
     font-family: Pokemon;
     src: url(../css/fonts/Pokemon\ Solid.ttf);
+}
+
+::-webkit-scrollbar{
+    width: 1.75vh;
+    margin: auto;
+}
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(to right bottom, rgb(254, 161, 161), rgb(254, 233, 161), rgb(177, 252, 160),
+    rgb(160, 201, 254), rgb(254, 160, 254), rgb(214, 162, 254));
+    border-radius: 5px;
 }

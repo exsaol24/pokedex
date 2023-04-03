@@ -1,3 +1,6 @@
+var pokemonList = document.getElementById("all-pokemon");
+var URL = "https://pokeapi.co/api/v2/pokemon/";
+
 var tipoPokemmon = {
     normal: 'Normal',
     fire: 'Fuego',
@@ -24,7 +27,7 @@ var tipoPokemmon = {
 
     const words = textToTranslate.split(' ');
 
-    for (let i = 0; i < words.length; i++) {
+    for (var i = 0; i < words.length; i++) {
         const word = words[i];
         if (tipoPokemmon[word]) {
             translatedText.push(tipoPokemmon[word]);
