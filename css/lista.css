@@ -15,7 +15,7 @@
     --type-ghost: rgb(112, 65, 112);
     --type-dark: rgb(80, 65, 63);
     --type-dragon: rgb(80, 97, 225);
-    --type-stell: rgb(96, 161, 184);
+    --type-steel: rgb(96, 161, 184);
     --type-fairy: rgb(239, 113, 239);
 }
 
@@ -84,7 +84,7 @@
     color: white;
 }
 .steel{
-    background-color: var(--type-stell);
+    background-color: var(--type-steel);
     color: white;
 }
 .fairy{
@@ -131,9 +131,12 @@
     text-transform: capitalize;
     outline: solid 1px;
 }
+/*.name::first-letter{
+    text-transform: uppercase;
+}*/
 .pokemon:hover{
-    background: linear-gradient(to bottom right, rgb(248, 142, 142), rgb(251, 225, 142), rgb(163, 253, 142),
-    rgb(146, 192, 253), rgb(255, 147, 255), rgb(208, 148, 254));
+    background: linear-gradient(to bottom right, rgb(254, 161, 161), rgb(254, 233, 161), rgb(177, 252, 160),
+    rgb(230, 230, 230), rgb(160, 201, 254), rgb(254, 160, 254), rgb(214, 162, 254));
 }
 .info{
     display: flex;
@@ -168,11 +171,11 @@
     font-weight: 800;
     flex-wrap: wrap;
     text-transform: uppercase;
-    /*-webkit-text-stroke: 1px black;*/
+    -webkit-text-stroke: 1px black;
 }
 .type{
     box-shadow: 0 0 7px 0px rgb(0, 0, 0);
-    /*outline: auto black;*/
+    outline: auto black;
     padding: 0.25rem 0.5rem;
     border-radius: 5px;
 }

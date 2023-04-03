@@ -172,7 +172,7 @@
     padding: 0.25rem 0.5rem;
     border-radius: 5px;
 }
-.peso{
+.weight{
     background-color: rgb(240, 240, 240);
     font-size: 0.75rem;
     font-weight: 800;
@@ -181,7 +181,7 @@
     padding: 0.5rem 0.5rem;
     border-radius: 5px;
 }
-.altura{
+.height{
     background-color: rgb(240, 240, 240);
     font-size: 0.75rem;
     font-weight: 800;
