@@ -13,16 +13,16 @@ async function getPokemon() {
 }
 
 function viewPokemon(poke) {
-    var tipos = poke.types.map(type => `<p class="type ${type.type.name}">${type.type.name}</p>`);
+    var tipos = poke.types.map(types => `<p class="type ${types.type.name}">${types.type.name}</p>`);
     tipos = tipos.join('');
-
+    
     var div1 = document.createElement("div");
     div1.classList.add("pokemon");
 
     var a = document.createElement("a");
     a.classList.add("enlace");
     /*a.setAttribute("target", "blank");*/
-    a.setAttribute("href", "../html/details.html");
+    a.setAttribute("href", `../html/details.html?id=${poke.id}`);
 
     var div2 = document.createElement("div");
     div2.classList.add("image");
