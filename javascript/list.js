@@ -13,14 +13,11 @@ async function getPokemon() {
 }
 
 function viewPokemon(poke) {
-    var tipos = poke.types.map(types => `<p class="type ${types.type.name}">${types.type.name}</p>`);
-    tipos = tipos.join('');
-    
     var div1 = document.createElement("div");
     div1.classList.add("pokemon");
 
     var a = document.createElement("a");
-    a.classList.add("enlace");
+    a.classList.add("link");
     /*a.setAttribute("target", "blank");*/
     a.setAttribute("href", `../html/details.html?id=${poke.id}`);
 
@@ -29,6 +26,7 @@ function viewPokemon(poke) {
 
     var img = document.createElement("img");
     img.src = poke.sprites.front_default;
+    /*img.src = poke.sprites.front_shiny;*/
     /*img.src = poke.sprites.other["official-artwork"].front_default;*/
     /*img.src = poke.sprites.other.home.front_default;*/
     img.alt = poke.name;
@@ -49,7 +47,6 @@ function viewPokemon(poke) {
 
     var div5 = document.createElement("div");
     div5.classList.add("types");
-    div5.innerHTML = `${tipos}`;
 
     pokemonList.appendChild(div1);
     div1.appendChild(a);
@@ -59,21 +56,10 @@ function viewPokemon(poke) {
     div3.appendChild(div4);
     div4.appendChild(p);
     div4.appendChild(h2);
-
-    div3.appendChild(div5) /* Añadir tipos */
+    div3.appendChild(div5);
+    getTypes(poke);
 }
 
-function id0Izqda(poke) {
-    var pokeId = poke.id.toString();
-    if (pokeId.length == 1) {
-        pokeId = "00" + pokeId;
-    }
-    else if (pokeId.length == 2) {
-        pokeId = "0" + pokeId;
-    }
-
-    return pokeId;
-}
 /*
 function traducirTipos() {
     var tipos;

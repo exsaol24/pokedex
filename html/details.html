@@ -4,59 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="../images/Riolu.png"/>
+    <link rel="shortcut icon" type="image/png" href="../images/RioluShiny.png"/>
     <link rel="stylesheet" type="text/css" href="../css/details.css"/>
     <link rel="stylesheet" type="text/css" href="../css/common.css"/>
     <title>Detalles</title>
 </head>
-<body onload="getPokemonDetails()">
+<body onload="getDetails()">
     <nav>
         <a class="title" href="../index.html">Pokedex</a>
     </nav>
+    <div class="barra">
+        <div id="dark-mode">
+            Dark mode
+        </div>
+        <div id="shiny">
+            Shiny
+        </div>
+    </div>
     <main>
-        
+        <div id="card">
             <div class="pokemon">
                 <div class="image">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu">
+                    <img>
                 </div>
                 <div class="info">
-                    <div class="container">
-                        <p class="id">#025</p>
-                        <h2 class="name">Pikachu</h2>
+                    <div class="container1">
+                        <p class="id"></p>
+                        <h2 class="name"></h2>
                     </div>
                     <div class="types">
-                        <p class="type electric">Eléctrico</p>
+                        
                     </div>
+                    <br>
                     <hr>
-                    <div class="container">
-                        <p class="weight">Peso: 0.6kg</p>
-                        <p class="height">Altura: 0.4m</p>
+                    <div class="container2">
+                        <p class="weight"></p>
+                        <p class="height"></p>
                     </div>
                     <hr>
                     <div class="stats">
-                        <div class="ps">
-                            <p>Vida: 35</p>
-                        </div>
-                        <div class="atack">
-                            <p>Ataque: 55</p>
-                        </div>
-                        <div class="defense">
-                            <p>Defensa: 40</p>
-                        </div>
-                        <div class="special-attack">
-                            <p>Ataque especial: 50</p>
-                        </div>
-                        <div class="special-defense">
-                            <p>Defensa especial: 50</p>
-                        </div>
-                        <div class="speed">
-                            <p>Velocidad: 90</p>
-                        </div>
+                            <div class="stat1"><p>Vida: </p><p class="stat2"></p></div><progress max="252"></progress>
+                            <div class="stat1"><p>Ataque: </p><p class="stat2"></p></div><progress max="252"></progress>
+                            <div class="stat1"><p>Defensa: </p><p class="stat2"></p></div><progress max="252"></progress>
+                            <div class="stat1"><p>Ataque especial: </p><p class="stat2"></div></p><progress max="252"></progress>
+                            <div class="stat1"><p>Defensa especial: </p><p class="stat2"></div></p><progress max="252"></progress>
+                            <div class="stat1"><p>Velocidad: </p><p class="stat2"></p></div><progress max="252"></progress>
                     </div>
                 </div>
             </div>
-        
+        </div>
+        <br>
+        <div id="evolves">
+            
+        </div>
+
     </main>
     <script src="../javascript/details.js"></script>
+    <script src="../javascript/common.js"></script>
 </body>
 </html>

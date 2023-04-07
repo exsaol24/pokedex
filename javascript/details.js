@@ -1,42 +1,82 @@
-var pokemonList = document.getElementById("all-pokemon");
+var pokemonList = document.getElementById("evolves");
 var URL = "https://pokeapi.co/api/v2/pokemon/";
 
-/*function getTypes() {
+function getDetails() {
     var params = window.location.search;
 
     var url = new URLSearchParams(params);
 
-    
+    var id = url.get("id");
 
-    console.log(url);
+    getPokemonDetails(id);
 }
 
-async function getPokemonDetails(poke) {
-    var tipos = document.getElementsByClassName("type");
-
-    getTypes();
-
-    for (var i = 0; i <= tipos.length; i++) {
-        var div1 = document.createElement("div")
-        div1.classList.add("types");
-        
-    }
+async function getPokemonDetails(id) {
+    var request = await fetch(URL + id);
+    var data = await request.json();
+    await viewPokemon(data);
 }
 
 function viewPokemon(poke) {
-    var tipos = poke.types.map(types => `<p class="type ${types.type.name}">${types.type.name}</p>`);
-    tipos = tipos.join('');
+    var img = document.getElementsByTagName("img")[0];
+    img.src = poke.sprites.front_default;
+    /*img.src = poke.sprites.other["official-artwork"].front_default;*/
+    /*img.src = poke.sprites.other.home.front_default;*/
+    img.alt = poke.name;
 
+    var pid = document.getElementsByClassName("id")[0];
+    pid.innerHTML = `#${id0Izqda(poke)}`;
+
+    var name = document.getElementsByClassName("name")[0];
+    name.innerHTML = `${poke.name}`;
+
+    var types = document.getElementsByClassName("types")[0];
+    getTypes(poke);
+
+    var pweight = document.getElementsByClassName("weight")[0];
+    pweight.innerHTML = `Peso: ${poke.weight / 10}kg`;
+
+    var pheight = document.getElementsByClassName("height")[0];
+    pheight.innerHTML = `Altura: ${poke.height / 10}m`;
+    
+    getStats(poke);
+}
+
+function getStats(poke) {
+    var stats = document.getElementsByClassName("stat2");
+    var progress = document.getElementsByTagName("progress");;
+
+    for (var i = 0; i < stats.length; i++) {
+        var stat = stats[i];
+
+        stat.innerHTML = poke.stats[i].base_stat;
+        progress[i].value = poke.stats[i].base_stat;
+    }
+}
+
+async function getEvolution(id) {
+    var request = await fetch(URL + id);
+    var data = await request.json();
+    await viewEvolution(data);
+}
+
+function viewEvolution(poke) {
     var div1 = document.createElement("div");
     div1.classList.add("pokemon");
+
+    var a = document.createElement("a");
+    a.classList.add("link");
+    /*a.setAttribute("target", "blank");*/
+    a.setAttribute("href", `../html/details.html?id=${poke.id}`);
 
     var div2 = document.createElement("div");
     div2.classList.add("image");
 
     var img = document.createElement("img");
     img.src = poke.sprites.front_default;
+    /*img.src = poke.sprites.front_shiny;*/
     /*img.src = poke.sprites.other["official-artwork"].front_default;*/
-    /*img.src = poke.sprites.other.home.front_default;*//*
+    /*img.src = poke.sprites.other.home.front_default;*/
     img.alt = poke.name;
 
     var div3 = document.createElement("div");
@@ -55,9 +95,8 @@ function viewPokemon(poke) {
 
     var div5 = document.createElement("div");
     div5.classList.add("types");
-    div5.innerHTML = `${tipos}`;
 
-    pokemonList.appendChild(div1);
+    evolves.appendChild(div1);
     div1.appendChild(a);
     a.appendChild(div2);
     div2.appendChild(img);
@@ -65,49 +104,6 @@ function viewPokemon(poke) {
     div3.appendChild(div4);
     div4.appendChild(p);
     div4.appendChild(h2);
-
-    div3.appendChild(div5) /* Añadir tipos *//*
+    div3.appendChild(div5);
+    getTypes(poke);
 }
-
-/*
-    <div class="pokemon">
-        <div class="image">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu">
-        </div>
-        <div class="info">
-            <div class="container">
-                <p class="id">#025</p>
-                <h2 class="name">Pikachu</h2>
-            </div>
-            <div class="types">
-                <p class="type electric">Eléctrico</p>
-            </div>
-            <hr>
-            <div class="container">
-                <p class="weight">Peso: 0.6kg</p>
-                <p class="height">Altura: 0.4m</p>
-            </div>
-            <hr>
-            <div class="stats">
-                <div class="ps">
-                    <p>Vida: 35</p>
-                </div>
-                <div class="atack">
-                    <p>Ataque: 55</p>
-                </div>
-                <div class="defense">
-                    <p>Defensa: 40</p>
-                </div>
-                <div class="special-attack">
-                    <p>Ataque especial: 50</p>
-                </div>
-                <div class="special-defense">
-                    <p>Defensa especial: 50</p>
-                </div>
-                <div class="speed">
-                    <p>Velocidad: 90</p>
-                </div>
-            </div>
-        </div>
-    </div>
-*/

@@ -1,10 +1,10 @@
 var pokemonList = document.getElementById("all-pokemon");
 var URL = "https://pokeapi.co/api/v2/pokemon/";
 
-var tipoPokemmon = {
+var tipoPokemon = {
     normal: 'Normal',
     fire: 'Fuego',
-    water: 'Water',
+    water: 'Agua',
     grass: 'Planta',
     electric: 'Eléctrico',
     ice: 'Hielo',
@@ -22,19 +22,29 @@ var tipoPokemmon = {
     fairy: 'Hada',
 };
 
-/*function translateToSpanish(textToTranslate) {
-    const translatedText = [];
+function getTypes(poke) {
+    var types = document.getElementsByClassName("types");
 
-    const words = textToTranslate.split(' ');
+    for (var i = 0; i < poke.types.length; i++) {
+        var type = document.createElement("div");
+        type.classList.add("type");
 
-    for (var i = 0; i < words.length; i++) {
-        const word = words[i];
-        if (tipoPokemmon[word]) {
-            translatedText.push(tipoPokemmon[word]);
-        } else {
-            translatedText.push(word);
-        }
+        type.innerHTML = tipoPokemon[poke.types[i].type.name];
+        type.style.backgroundColor = `var(--${poke.types[i].type.name})`;
+        type.style.color = `white`;
+        
+        types[types.length - 1].appendChild(type);
+    }
+}
+
+function id0Izqda(poke) {
+    var pokeId = poke.id.toString();
+    if (pokeId.length == 1) {
+        pokeId = "00" + pokeId;
+    }
+    else if (pokeId.length == 2) {
+        pokeId = "0" + pokeId;
     }
 
-    return translatedText.join(' ');
-}*/
+    return pokeId;
+}

@@ -1,95 +1,22 @@
 :root{
-    --type-normal: rgb(159, 161, 159);
-    --type-fire: rgb(230, 40, 41);
-    --type-water: rgb(41, 128, 239);
-    --type-grass: rgb(63, 161, 41);
-    --type-electric: rgb(250, 192, 0);
-    --type-ice: rgb(63, 216, 255);
-    --type-fighting: rgb(255, 128, 0);
-    --type-poison: rgb(143, 65, 203);
-    --type-ground: rgb(145, 81, 33);
-    --type-flying: rgb(129, 185, 239);
-    --type-psychic: rgb(239, 65, 121);
-    --type-bug: rgb(145, 161, 25);
-    --type-rock: rgb(175, 169, 129);
-    --type-ghost: rgb(112, 65, 112);
-    --type-dark: rgb(80, 65, 63);
-    --type-dragon: rgb(80, 97, 225);
-    --type-steel: rgb(96, 161, 184);
-    --type-fairy: rgb(239, 113, 239);
-}
-
-.normal{
-    background-color: var(--type-normal);
-    color: white;
-}
-.fire{
-    background-color: var(--type-fire);
-    color: white;
-}
-.water{
-    background-color: var(--type-water);
-    color: white;
-}
-.grass{
-    background-color: var(--type-grass);
-    color: white;
-}
-.electric{
-    background-color: var(--type-electric);
-    color: white;
-}
-.ice{
-    background-color: var(--type-ice);
-    color: white;
-}
-.fighting{
-    background-color: var(--type-fighting);
-    color: white;
-}
-.poison{
-    background-color: var(--type-poison);
-    color: white;
-}
-.ground{
-    background-color: var(--type-ground);
-    color: white;
-}
-.flying{
-    background-color: var(--type-flying);
-    color: white;
-}
-.psychic{
-    background-color: var(--type-psychic);
-    color: white;
-}
-.bug{
-    background-color: var(--type-bug);
-    color: white;
-}
-.rock{
-    background-color: var(--type-rock);
-    color: white;
-}
-.ghost{
-    background-color: var(--type-ghost);
-    color: white;
-}
-.dark{
-    background-color: var(--type-dark);
-    color: white;
-}
-.dragon{
-    background-color: var(--type-dragon);
-    color: white;
-}
-.steel{
-    background-color: var(--type-stell);
-    color: white;
-}
-.fairy{
-    background-color: var(--type-fairy);
-    color: white;
+    --normal: rgb(159, 161, 159);
+    --fire: rgb(230, 40, 41);
+    --water: rgb(41, 128, 239);
+    --grass: rgb(63, 161, 41);
+    --electric: rgb(250, 192, 0);
+    --ice: rgb(63, 216, 255);
+    --fighting: rgb(255, 128, 0);
+    --poison: rgb(143, 65, 203);
+    --ground: rgb(145, 81, 33);
+    --flying: rgb(129, 185, 239);
+    --psychic: rgb(239, 65, 121);
+    --bug: rgb(145, 161, 25);
+    --rock: rgb(175, 169, 129);
+    --ghost: rgb(112, 65, 112);
+    --dark: rgb(80, 65, 63);
+    --dragon: rgb(80, 97, 225);
+    --steel: rgb(96, 161, 184);
+    --fairy: rgb(239, 113, 239);
 }
 
 *{
@@ -125,9 +52,9 @@ nav{
     font-family: Pokemon;
     src: url(../css/fonts/Pokemon\ Solid.ttf);
 }
-#dark-mode{
+/*#dark-mode{
     
-}
+}*/
 ::-webkit-scrollbar{
     width: 1.75vh;
     margin: auto;
@@ -136,7 +63,7 @@ nav{
     background-color: transparent;
 }
 ::-webkit-scrollbar-thumb{
-    background: linear-gradient(to right bottom, rgb(254, 161, 161), rgb(254, 233, 161), rgb(177, 252, 160),
+    background: linear-gradient(to bottom, rgb(254, 161, 161), rgb(254, 233, 161), rgb(177, 252, 160),
     rgb(160, 201, 254), rgb(254, 160, 254), rgb(214, 162, 254));
     border-radius: 5px;
 }
