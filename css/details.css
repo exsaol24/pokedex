@@ -156,6 +156,7 @@ progress {
 ::-webkit-progress-bar {
     background-color: white;
 }
+
 ::-webkit-progress-value {
     border-radius: 3px;
     background-color: black;
@@ -168,8 +169,6 @@ progress {
 */
 
 
-
-
 /*
 *{
     color: white;
@@ -180,23 +179,17 @@ body{
     margin: 0;
     min-height: 100vh;
 }
-.title{
-    font-family: Pokemon;
-    text-decoration: none;
-    -webkit-text-stroke: 2.5px rgb(50, 100, 176);
-    color: rgb(255, 204, 1);
-    text-shadow: 0px 0px 15px black;
-    letter-spacing: 0.5vh;
-}
-.image{
+.image {
     padding-inline: 1rem;
     display: flex;
     justify-content: center;
 }
-.image img{
+
+.image img {
     width: 100%;
     max-width: 150px;
 }
+
 /*
 @media screen and (min-width: 450px){
     .all-pokemon{
@@ -213,9 +206,8 @@ body{
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
-*/
-/*
-.pokemon{
+*//*
+.pokemon {
     margin: auto;
     border-radius: 15px;
     border: 2px solid white;
@@ -225,26 +217,45 @@ body{
     text-transform: capitalize;
     max-width: 300px;
 }
-.pokemon:hover{
+
+.pokemon:hover {
     background: linear-gradient(to bottom right, rgb(71, 21, 21), rgb(78, 65, 23), rgb(32, 75, 23),
-    rgb(23, 47, 79), rgb(65, 20, 65), rgb(51, 23, 73));
+            rgb(23, 47, 79), rgb(65, 20, 65), rgb(51, 23, 73));
 }
-.info{
+
+.barra:hover {
+    background: linear-gradient(to right, rgb(71, 21, 21), rgb(78, 65, 23), rgb(32, 75, 23),
+            rgb(23, 47, 79), rgb(65, 20, 65), rgb(51, 23, 73));
+}
+
+.info {
     display: flex;
     flex-direction: column;
     padding-inline: 1rem;
     align-items: center;
     text-align: center;
 }
-.container{
+
+.container1 {
     display: flex;
     align-items: center;
     column-gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
+    font-weight: 700;
 }
-.id{
-    background: radial-gradient( rgb(0, 0, 0),  rgb(0, 0, 0), rgb(240, 240, 240));
+
+.container2 {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.id {
+    background: radial-gradient(rgb(0, 0, 0), rgb(0, 0, 0), rgb(240, 240, 240));
     box-shadow: 0 0 7.5px 0px rgb(255, 255, 255);
     color: white;
     padding: 0.25rem 0.5rem;
@@ -253,11 +264,13 @@ body{
     font-size: 0.75rem;
     font-weight: 800;
 }
-.name{
+
+.name {
     font-size: 20px;
     font-weight: 800;
 }
-.types{
+
+.types {
     display: flex;
     gap: 0.75rem;
     font-size: 0.75rem;
@@ -266,18 +279,65 @@ body{
     text-transform: uppercase;
     -webkit-text-stroke: 1px black;
 }
-.type{
+
+.type {
     box-shadow: 0 0 7px 0px white;
-    outline: auto black;
+    border: 1px solid black;
     padding: 0.25rem 0.5rem;
     border-radius: 5px;
 }
-hr{
+
+hr {
     width: 12.5rem;
 }
-.container, .stats{
+
+.stats {
+    text-align: left;
     font-weight: 700;
 }
-.stats{
-    text-align: left;
-}*/
+
+.barra {
+    border-radius: 15px;
+    max-width: 300px;
+    margin: auto;
+    background-color: rgb(10, 10, 10);
+    border: 2px solid white;
+    display: flex;
+    padding: 1rem;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.stat1 {
+    display: flex;
+    column-gap: 1rem;
+    flex-wrap: wrap;
+    font-weight: 700;
+}
+
+#dark-mode {
+    margin-left: 10%;
+    margin-right: 20%;
+}
+
+#shiny {
+    margin-left: 15%;
+}
+
+progress {
+    background-color: black;
+    padding: 2px;
+    border: 2px solid white;
+    border-radius: 6px;
+}
+
+::-webkit-progress-bar {
+    background-color: black;
+}
+
+::-webkit-progress-value {
+    border-radius: 3px;
+    background-color: white;
+}

@@ -13,6 +13,7 @@ async function getPokemon() {
 }
 
 function viewPokemon(poke) {
+
     var div1 = document.createElement("div");
     div1.classList.add("pokemon");
 
@@ -59,22 +60,3 @@ function viewPokemon(poke) {
     div3.appendChild(div5);
     getTypes(poke);
 }
-
-/*
-function traducirTipos() {
-    var tipos;
-
-    for (var i = 0; i < 2; i++) {
-
-    }
-}*/
-/*
-function cogerTipos(array) {
-    var arrayPokemon = [];
-
-    for (var i = 0; i < array.length; i++) {
-        for (var j = 0; j < array.; j++) {
-            
-        }
-    }
-}*/
