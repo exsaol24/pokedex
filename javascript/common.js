@@ -2,24 +2,24 @@ var pokemonList = document.getElementById("all-pokemon");
 var URL = "https://pokeapi.co/api/v2/pokemon/";
 
 var tipoPokemon = {
-    normal: 'Normal',
-    fire: 'Fuego',
-    water: 'Agua',
-    grass: 'Planta',
-    electric: 'Eléctrico',
-    ice: 'Hielo',
-    fighting: 'Lucha',
-    poison: 'Veneno',
-    ground: 'Tierra',
-    flying: 'Volador',
-    psychic: 'Psíquico',
-    bug: 'Bicho',
-    rock: 'Roca',
-    ghost: 'Fantasma',
-    dark: 'Siniestro',
-    dragon: 'Dragón',
-    steel: 'Acero',
-    fairy: 'Hada',
+    normal: "Normal",
+    fire: "Fuego",
+    water: "Agua",
+    grass: "Planta",
+    electric: "Eléctrico",
+    ice: "Hielo",
+    fighting: "Lucha",
+    poison: "Veneno",
+    ground: "Tierra",
+    flying: "Volador",
+    psychic: "Psíquico",
+    bug: "Bicho",
+    rock: "Roca",
+    ghost: "Fantasma",
+    dark: "Siniestro",
+    dragon: "Dragón",
+    steel: "Acero",
+    fairy: "Hada",
 };
 
 function getTypes(poke) {
@@ -32,7 +32,7 @@ function getTypes(poke) {
         type.innerHTML = tipoPokemon[poke.types[i].type.name];
         type.style.backgroundColor = `var(--${poke.types[i].type.name})`;
         type.style.color = `white`;
-        
+
         types[types.length - 1].appendChild(type);
     }
 }
@@ -47,4 +47,41 @@ function id0Izqda(poke) {
     }
 
     return pokeId;
+}
+
+function changeTheme() {
+    var pokeball = document.getElementById("pokeball");
+    var changeModes = document.getElementById("change-modes");
+    var btnJolteon = document.getElementById("button-jolteon");
+    var btnUmbreon = document.getElementById("button-umbreon");
+    var containerPokeball = document.getElementById("pokeball");
+
+    pokeball.addEventListener("click", () => {
+        changeModes.classList.toggle("active");
+    })
+
+    var preferedColorScheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+
+    var setTheme = (theme) => {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+    };
+
+
+
+
+    btnUmbreon.addEventListener("click", () => {
+        setTheme("dark");
+    });
+
+
+    btnJolteon.addEventListener("click", () => {
+        setTheme("light");
+    });
+
+    setTheme(localStorage.getItem("theme") || preferedColorScheme);
+}
+
+function click(changeModes) {
+    changeModes.classList.toggle("active");
 }

@@ -75,13 +75,8 @@ hr {
     font-weight: 700;
 }
 
-#dark-mode {
-    margin-left: 10%;
-    margin-right: 20%;
-}
-
 #shiny {
-    margin-left: 15%;
+    margin: auto;
 }
 
 progress {
@@ -89,6 +84,7 @@ progress {
     padding: 2px;
     border: 2px solid black;
     border-radius: 6px;
+    box-shadow: 0px 0px 7.5px 0px black;
 }
 
 ::-webkit-progress-bar {
@@ -110,44 +106,6 @@ progress {
 
 
 /*
-*{
-    color: white;
-    font-family: sans-serif;
-}
-body{
-    background: linear-gradient(to right, rgb(24, 82, 41), rgb(79, 53, 24) , rgb(25, 73, 79));
-    margin: 0;
-    min-height: 100vh;
-}
-.image {
-    padding-inline: 1rem;
-    display: flex;
-    justify-content: center;
-}
-
-.image img {
-    width: 100%;
-    max-width: 150px;
-}
-
-/*
-@media screen and (min-width: 450px){
-    .all-pokemon{
-        grid-template-columns: 1fr 1fr;
-    }
-}
-@media screen and (min-width: 700px){
-    .all-pokemon{
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-@media screen and (min-width: 925px){
-    .all-pokemon{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-}
-*/
-/*
 .pokemon {
     margin: auto;
     border-radius: 15px;
@@ -158,85 +116,6 @@ body{
     text-transform: capitalize;
     max-width: 300px;
 }
-
-.pokemon:hover {
-    background: linear-gradient(to bottom right, rgb(71, 21, 21), rgb(78, 65, 23), rgb(32, 75, 23),
-            rgb(23, 47, 79), rgb(65, 20, 65), rgb(51, 23, 73));
-}
-
-.barra:hover {
-    background: linear-gradient(to right, rgb(71, 21, 21), rgb(78, 65, 23), rgb(32, 75, 23),
-            rgb(23, 47, 79), rgb(65, 20, 65), rgb(51, 23, 73));
-}
-
-.info {
-    display: flex;
-    flex-direction: column;
-    padding-inline: 1rem;
-    align-items: center;
-    text-align: center;
-}
-
-.container1 {
-    display: flex;
-    align-items: center;
-    column-gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    font-weight: 700;
-}
-
-.container2 {
-    display: flex;
-    align-items: center;
-    column-gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    font-weight: 700;
-}
-
-.id {
-    background: radial-gradient(rgb(0, 0, 0), rgb(0, 0, 0), rgb(240, 240, 240));
-    box-shadow: 0 0 7.5px 0px rgb(255, 255, 255);
-    color: white;
-    padding: 0.25rem 0.5rem;
-    border-radius: 5px;
-    border: 1px solid white;
-    font-size: 0.75rem;
-    font-weight: 800;
-}
-
-.name {
-    font-size: 20px;
-    font-weight: 800;
-}
-
-.types {
-    display: flex;
-    gap: 0.75rem;
-    font-size: 0.75rem;
-    font-weight: 800;
-    flex-wrap: wrap;
-    text-transform: uppercase;
-    -webkit-text-stroke: 1px black;
-}
-
-.type {
-    box-shadow: 0 0 7px 0px white;
-    border: 1px solid black;
-    padding: 0.25rem 0.5rem;
-    border-radius: 5px;
-}
-
-hr {
-    width: 12.5rem;
-}
-
-.stats {
-    text-align: left;
-    font-weight: 700;
-}
-
 .barra {
     border-radius: 15px;
     max-width: 300px;
@@ -246,32 +125,12 @@ hr {
     display: flex;
     padding: 1rem;
 }
-
-.link {
-    text-decoration: none;
-}
-
-.stat1 {
-    display: flex;
-    column-gap: 1rem;
-    flex-wrap: wrap;
-    font-weight: 700;
-}
-
-#dark-mode {
-    margin-left: 10%;
-    margin-right: 20%;
-}
-
-#shiny {
-    margin-left: 15%;
-}
-
 progress {
     background-color: black;
     padding: 2px;
     border: 2px solid white;
     border-radius: 6px;
+    box-shadow: 0px 0px 7.5px 0px white;
 }
 
 ::-webkit-progress-bar {
@@ -281,4 +140,4 @@ progress {
 ::-webkit-progress-value {
     border-radius: 3px;
     background-color: white;
-}
+}*/

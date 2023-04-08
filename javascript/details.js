@@ -1,5 +1,7 @@
 var URL = "https://pokeapi.co/api/v2/pokemon/";
-var URL2 =  "https://pokeapi.co/api/v2/evolution-chain/";
+/*var URL2 = "https://pokeapi.co/api/v2/pokemon-species/";
+var URL3 = "https://pokeapi.co/api/v2/evolution-chain/";*/
+
 
 function getDetails() {
     var params = window.location.search;
@@ -15,10 +17,19 @@ async function getPokemonDetails(id) {
     var request = await fetch(URL + id);
     var data = await request.json();
     await viewPokemon(data);
-    viewEvolves(data);
-    var request2 = await fetch(URL2 + id);
+    await viewEvolves(data);
+}
+
+async function getChain(url) {
+    var request1 = await fetch(url);
+    var data1 = await request1.json();
+
+    var urlChain = data1.evolution_chain.url;
+
+    var request2 = await fetch(urlChain);
     var data2 = await request2.json();
-    console.log(data2);
+
+    return data2;
 }
 
 function viewPokemon(poke) {
@@ -42,7 +53,7 @@ function viewPokemon(poke) {
 
     var pheight = document.getElementsByClassName("height")[0];
     pheight.innerHTML = `Altura: ${poke.height / 10}m`;
-    
+
     getStats(poke);
 }
 
@@ -58,7 +69,7 @@ function getStats(poke) {
     }
 }
 
-function viewEvolves(poke) {
+async function viewEvolves(poke) {
     var evolves = document.getElementById("evolves");
 
     var div1 = document.createElement("div");
@@ -85,9 +96,9 @@ function viewEvolves(poke) {
     var div4 = document.createElement("div");
     div4.classList.add("container1");
 
-    var p = document.createElement("p");
-    p.classList.add("id");
-    p.innerHTML = `#${id0Izqda(poke)}`;
+    var p1 = document.createElement("p");
+    p1.classList.add("id");
+    p1.innerHTML = `#${id0Izqda(poke)}`;
 
     var h2 = document.createElement("h2");
     h2.classList.add("name");
@@ -104,22 +115,26 @@ function viewEvolves(poke) {
     div2.appendChild(img);
     a.appendChild(div3);
     div3.appendChild(div4);
-    div4.appendChild(p);
+    div4.appendChild(p1);
     div4.appendChild(h2);
     div3.appendChild(div5);
     getTypes(poke);
     div3.appendChild(div6);
-/*
-    if (poke.chain.evolves_to[0].evolution_details[0].trigger.name == "level-up") {
-        if (poke.chain.evolves_to[0].evolution_details[0].min_level != null) {
-            div6.innerHTML = `HOLA ${poke.chain..evolves_to[0].evolution_details[0].min_level}`;
+
+    var urlspecies = poke.species.url;
+
+    var pokemon = await getChain(urlspecies);
+    
+    /*checkEvolve(pokemon);
+    
+        if (poke.chain.evolves_to.evolution_details.trigger.name == "level-up") {
+            div6.innerHTML = `HOLA ${poke.chain.evolves_to[0].evolution_details[0].min_level}`;
         }
-    }
-*/
+    */
 }
 /*
-function checkEvolves(poke) {
-    if (poke.chain.evolves_to[evolves_to[evolution_details]].min_level != null) {
-        
+function checkEvolve(poke) {
+    if (poke.chain.evolves_to.evolution_details.trigger.name == "level-up") {
+        div6.innerHTML = `HOLA ${poke.chain.evolves_to.evolution_details.min_level}`;
     }
 }*/

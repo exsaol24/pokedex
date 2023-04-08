@@ -16,6 +16,7 @@ function viewPokemon(poke) {
 
     var div1 = document.createElement("div");
     div1.classList.add("pokemon");
+    div1.classList.add("light-mode");
 
     var a = document.createElement("a");
     a.classList.add("link");
