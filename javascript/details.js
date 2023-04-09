@@ -123,17 +123,31 @@ async function viewEvolves(poke) {
     var urlspecies = poke.species.url;
 
     var pokemon = await getChain(urlspecies);
-    
+
     div6.innerHTML = checkEvolve(pokemon);
+
+
+
+    console.log(poke.chain.evolves_to[0].evolves_to[0]);
+
+    
     
 }
 
 function checkEvolve(poke) {
     var innerTrigger;
 
-    if (poke.chain.evolves_to[0].evolution_details[0].trigger.name == "level-up") {
+    if (poke.chain.evolves_to[0].evolution_details[0].trigger.name == "level-up" || poke.chain.evolves_to[0].evolution_details[0].trigger.name == "use-item" || poke.chain.evolves_to[0].evolution_details[0].trigger.name == "trade") {
+        if (poke.chain.evolves_to[0].evolution_details[0].trigger.name == "level-up") {
             innerTrigger = `Subir a nivel ${poke.chain.evolves_to[0].evolution_details[0].min_level}`;
         }
+        else if (poke.chain.evolves_to[0].evolution_details[0].trigger.name == "use-item") {
+            innerTrigger = `Usar ${poke.chain.evolves_to[0].evolution_details[0].item.name}`;
+        }
+        else if (poke.chain.evolves_to[0].evolution_details[0].trigger.name == "trade") {
+            innerTrigger = `${poke.chain.evolves_to[0].evolution_details[0].trigger.name}`;
+        }
+    }
 
     return innerTrigger;
 }
