@@ -60,3 +60,9 @@
 #shiny{
     margin: auto;
 }
+
+main {
+    padding: 2rem;
+    max-width: 1150px;
+    margin: auto;
+}

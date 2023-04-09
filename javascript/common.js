@@ -52,26 +52,26 @@ function id0Izqda(poke) {
 var pokeball = document.getElementById('pokeball');
 var panel = document.getElementById('panel');
 var btnJolteon = document.getElementById('btn-jolteon');
-var btnUmbreon= document.getElementById('btn-umbreon');
+var btnUmbreon = document.getElementById('btn-umbreon');
 var containerPokeball = document.getElementById('pokeball');
 
-pokeball.addEventListener('click',()=>{
+pokeball.addEventListener('click', () => {
     panel.classList.toggle('active');
 })
 
 var preferedColorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
 var setTheme = (theme) => {
-  document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('theme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
 };
 
-btnUmbreon.addEventListener('click', ()  => {
-  setTheme('dark');
+btnUmbreon.addEventListener('click', () => {
+    setTheme('dark');
 });
 
-btnJolteon.addEventListener('click', ()  => {
-  setTheme('light');
+btnJolteon.addEventListener('click', () => {
+    setTheme('light');
 });
 
 setTheme(localStorage.getItem('theme') || preferedColorScheme);

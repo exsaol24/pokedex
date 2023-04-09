@@ -1,12 +1,16 @@
 .pokemon {
-    margin: auto;
     border-radius: 15px;
     border: 2px solid var(--primary);
     background-color: var(--backgroundpokemon);
     box-shadow: 0 0 20px -5px var(--primary);
     padding: 1rem;
     text-transform: capitalize;
-    max-width: 300px;
+    width: 300px;
+}
+
+#card{
+    justify-content: center;
+    display: flex;
 }
 
 .container1 {
@@ -58,8 +62,9 @@ hr {
     font-weight: 700;
 }
 
-.trigger{
+.trigger {
     padding-top: 1.25rem;
+    font-weight: 600;
 }
 
 #shiny {
@@ -81,4 +86,16 @@ progress {
 ::-webkit-progress-value {
     border-radius: 3px;
     background-color: var(--primary);
+}
+
+#evolves {
+    gap: 5rem;
+    justify-content: center;
+    display: flex;
+    margin-top: 5%;
+}
+
+main {
+    padding: 2rem;
+    margin: auto;
 }

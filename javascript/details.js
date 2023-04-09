@@ -1,21 +1,29 @@
 var URL = "https://pokeapi.co/api/v2/pokemon/";
 
 
-function getDetails() {
+async function getDetails() {
     var params = window.location.search;
 
     var url = new URLSearchParams(params);
 
     var id = url.get("id");
 
-    getPokemonDetails(id);
+    var pokemonDetails = await getPokemonDetails(id);
+
+    var pokemonChain = await getChain(pokemonDetails.species.url);
+
+    viewPokemon(pokemonDetails);
+
+
+
+    await createChain(pokemonDetails, pokemonChain);
 }
 
 async function getPokemonDetails(id) {
     var request = await fetch(URL + id);
     var data = await request.json();
-    await viewPokemon(data);
-    await viewEvolves(data);
+
+    return data;
 }
 
 async function getChain(url) {
@@ -67,7 +75,31 @@ function getStats(poke) {
     }
 }
 
-async function viewEvolves(poke) {
+async function createChain(pokemon, pokemonChain) {
+    var chain = pokemonChain.chain;
+
+    var haveEvol = chain.evolves_to.length != 0;
+
+    if (haveEvol) {
+        await viewEvolves(chain);
+    }
+
+    while (haveEvol) {
+        if (chain.evolves_to.length == 0) {
+            haveEvol = false;
+        }
+        if (chain.evolution_details.length != 0) {
+            await viewEvolves(chain);
+        }
+        chain = chain.evolves_to[0];
+    }
+}
+
+async function viewEvolves(chain) {
+    var pokemonId = chain.species.url.split('/')[6];
+
+    var poke = await getPokemonDetails(pokemonId);
+
     var evolves = document.getElementById("evolves");
 
     var div1 = document.createElement("div");
@@ -120,33 +152,21 @@ async function viewEvolves(poke) {
     getTypes(poke);
     div3.appendChild(div6);
 
-    var urlspecies = poke.species.url;
+    /*div6.innerHTML = checkEvolve(pokemon);*/
 
-    var pokemon = await getChain(urlspecies);
-
-    div6.innerHTML = checkEvolve(pokemon);
-
-
-
-    console.log(poke.chain.evolves_to[0].evolves_to[0]);
-
-    
-    
 }
 
 function checkEvolve(poke) {
     var innerTrigger;
 
-    if (poke.chain.evolves_to[0].evolution_details[0].trigger.name == "level-up" || poke.chain.evolves_to[0].evolution_details[0].trigger.name == "use-item" || poke.chain.evolves_to[0].evolution_details[0].trigger.name == "trade") {
-        if (poke.chain.evolves_to[0].evolution_details[0].trigger.name == "level-up") {
-            innerTrigger = `Subir a nivel ${poke.chain.evolves_to[0].evolution_details[0].min_level}`;
-        }
-        else if (poke.chain.evolves_to[0].evolution_details[0].trigger.name == "use-item") {
-            innerTrigger = `Usar ${poke.chain.evolves_to[0].evolution_details[0].item.name}`;
-        }
-        else if (poke.chain.evolves_to[0].evolution_details[0].trigger.name == "trade") {
-            innerTrigger = `${poke.chain.evolves_to[0].evolution_details[0].trigger.name}`;
-        }
+    if (poke.chain.evolves_to[0].evolution_details[0].trigger.name == "level-up") {
+        innerTrigger = `Subir a nivel ${poke.chain.evolves_to[0].evolution_details[0].min_level}`;
+    }
+    else if (poke.chain.evolves_to[0].evolution_details[0].trigger.name == "use-item") {
+        innerTrigger = `Usar ${poke.chain.evolves_to[0].evolution_details[0].item.name}`;
+    }
+    else if (poke.chain.evolves_to[0].evolution_details[0].trigger.name == "trade") {
+        innerTrigger = `${poke.chain.evolves_to[0].evolution_details[0].trigger.name}`;
     }
 
     return innerTrigger;
