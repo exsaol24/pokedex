@@ -78,6 +78,8 @@ function getStats(poke) {
 async function createChain(pokemon, pokemonChain) {
     var chain = pokemonChain.chain;
 
+    console.log(pokemon);
+
     var haveEvol = chain.evolves_to.length != 0;
 
     if (haveEvol) {
@@ -92,6 +94,7 @@ async function createChain(pokemon, pokemonChain) {
             await viewEvolves(chain);
         }
         chain = chain.evolves_to[0];
+        
     }
 }
 

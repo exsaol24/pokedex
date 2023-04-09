@@ -33,7 +33,7 @@
     --colortitle: rgb(255, 204, 1);
     --bordertitle: rgb(50, 100, 176);
     --titleshadow: white;
-    --scrollbar-background: rgb(157, 237, 246);
+    --scrollbar-background: rgb(75, 237, 255);
 }
 
 [data-theme="dark"] {
