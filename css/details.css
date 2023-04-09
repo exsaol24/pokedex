@@ -1,26 +1,9 @@
-/*
-@media screen and (min-width: 450px){
-    .all-pokemon{
-        grid-template-columns: 1fr 1fr;
-    }
-}
-@media screen and (min-width: 700px){
-    .all-pokemon{
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-@media screen and (min-width: 925px){
-    .all-pokemon{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-}
-*/
 .pokemon {
     margin: auto;
     border-radius: 15px;
-    border: 2px solid black;
-    background-color: rgb(240, 240, 240);
-    box-shadow: 0 0 20px -5px black;
+    border: 2px solid var(--primary);
+    background-color: var(--backgroundpokemon);
+    box-shadow: 0 0 20px -5px var(--primary);
     padding: 1rem;
     text-transform: capitalize;
     max-width: 300px;
@@ -62,8 +45,8 @@ hr {
     border-radius: 15px;
     max-width: 300px;
     margin: auto;
-    background-color: rgb(240, 240, 240);
-    border: 2px solid black;
+    background-color: var(--backgroundpokemon);
+    border: 2px solid var(--primary);
     display: flex;
     padding: 1rem;
 }
@@ -75,69 +58,27 @@ hr {
     font-weight: 700;
 }
 
+.trigger{
+    padding-top: 1.25rem;
+}
+
 #shiny {
     margin: auto;
 }
 
 progress {
-    background-color: white;
+    background-color: var(--titleshadow);
     padding: 2px;
-    border: 2px solid black;
+    border: 2px solid var(--primary);
     border-radius: 6px;
-    box-shadow: 0px 0px 7.5px 0px black;
+    box-shadow: 0px 0px 7.5px 0px var(--primary);
 }
 
 ::-webkit-progress-bar {
-    background-color: white;
+    background-color: var(--titleshadow);
 }
 
 ::-webkit-progress-value {
     border-radius: 3px;
-    background-color: black;
+    background-color: var(--primary);
 }
-
-
-
-
-
-/*
-    //Modo Oscuro
-*/
-
-
-/*
-.pokemon {
-    margin: auto;
-    border-radius: 15px;
-    border: 2px solid white;
-    background-color: rgb(10, 10, 10);
-    box-shadow: 0 0 20px -5px white;
-    padding: 1rem;
-    text-transform: capitalize;
-    max-width: 300px;
-}
-.barra {
-    border-radius: 15px;
-    max-width: 300px;
-    margin: auto;
-    background-color: rgb(10, 10, 10);
-    border: 2px solid white;
-    display: flex;
-    padding: 1rem;
-}
-progress {
-    background-color: black;
-    padding: 2px;
-    border: 2px solid white;
-    border-radius: 6px;
-    box-shadow: 0px 0px 7.5px 0px white;
-}
-
-::-webkit-progress-bar {
-    background-color: black;
-}
-
-::-webkit-progress-value {
-    border-radius: 3px;
-    background-color: white;
-}*/

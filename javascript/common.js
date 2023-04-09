@@ -49,39 +49,29 @@ function id0Izqda(poke) {
     return pokeId;
 }
 
-function changeTheme() {
-    var pokeball = document.getElementById("pokeball");
-    var changeModes = document.getElementById("change-modes");
-    var btnJolteon = document.getElementById("button-jolteon");
-    var btnUmbreon = document.getElementById("button-umbreon");
-    var containerPokeball = document.getElementById("pokeball");
+var pokeball = document.getElementById('pokeball');
+var panel = document.getElementById('panel');
+var btnJolteon = document.getElementById('btn-jolteon');
+var btnUmbreon= document.getElementById('btn-umbreon');
+var containerPokeball = document.getElementById('pokeball');
 
-    pokeball.addEventListener("click", () => {
-        changeModes.classList.toggle("active");
-    })
+pokeball.addEventListener('click',()=>{
+    panel.classList.toggle('active');
+})
 
-    var preferedColorScheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+var preferedColorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
-    var setTheme = (theme) => {
-        document.documentElement.setAttribute("data-theme", theme);
-        localStorage.setItem("theme", theme);
-    };
+var setTheme = (theme) => {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+};
 
+btnUmbreon.addEventListener('click', ()  => {
+  setTheme('dark');
+});
 
+btnJolteon.addEventListener('click', ()  => {
+  setTheme('light');
+});
 
-
-    btnUmbreon.addEventListener("click", () => {
-        setTheme("dark");
-    });
-
-
-    btnJolteon.addEventListener("click", () => {
-        setTheme("light");
-    });
-
-    setTheme(localStorage.getItem("theme") || preferedColorScheme);
-}
-
-function click(changeModes) {
-    changeModes.classList.toggle("active");
-}
+setTheme(localStorage.getItem('theme') || preferedColorScheme);

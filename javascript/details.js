@@ -1,6 +1,4 @@
 var URL = "https://pokeapi.co/api/v2/pokemon/";
-/*var URL2 = "https://pokeapi.co/api/v2/pokemon-species/";
-var URL3 = "https://pokeapi.co/api/v2/evolution-chain/";*/
 
 
 function getDetails() {
@@ -108,6 +106,7 @@ async function viewEvolves(poke) {
     div5.classList.add("types");
 
     var div6 = document.createElement("div");
+    div6.classList.add("trigger");
 
     evolves.appendChild(div1);
     div1.appendChild(a);
@@ -125,16 +124,16 @@ async function viewEvolves(poke) {
 
     var pokemon = await getChain(urlspecies);
     
-    /*checkEvolve(pokemon);
+    div6.innerHTML = checkEvolve(pokemon);
     
-        if (poke.chain.evolves_to.evolution_details.trigger.name == "level-up") {
-            div6.innerHTML = `HOLA ${poke.chain.evolves_to[0].evolution_details[0].min_level}`;
-        }
-    */
 }
-/*
+
 function checkEvolve(poke) {
-    if (poke.chain.evolves_to.evolution_details.trigger.name == "level-up") {
-        div6.innerHTML = `HOLA ${poke.chain.evolves_to.evolution_details.min_level}`;
-    }
-}*/
+    var innerTrigger;
+
+    if (poke.chain.evolves_to[0].evolution_details[0].trigger.name == "level-up") {
+            innerTrigger = `Subir a nivel ${poke.chain.evolves_to[0].evolution_details[0].min_level}`;
+        }
+
+    return innerTrigger;
+}

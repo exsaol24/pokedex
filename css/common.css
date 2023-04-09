@@ -20,36 +20,44 @@
 }
 
 [data-theme="light"] {
-    --primary: white;
+    --primary: black;
     --background: linear-gradient(to right, rgb(147, 248, 176), rgb(244, 198, 146), rgb(157, 237, 246));
-    --backgroundcrossbar: linear-gradient(to bottom, rgb(254, 161, 161), rgb(254, 233, 161), rgb(177, 252, 160),
-    rgb(160, 201, 254), rgb(254, 160, 254), rgb(214, 162, 254));
-    --backgroundpokemon: linear-gradient(to bottom right, rgb(254, 161, 161), rgb(254, 233, 161), rgb(177, 252, 160),
-    rgb(160, 201, 254), rgb(254, 160, 254), rgb(214, 162, 254));
-    --backgroundtransparente: radial-gradient(rgb(255, 255, 255), rgb(240, 240, 240), rgb(180, 180, 180));
+    --backgroundscrollbar: linear-gradient(to bottom, rgb(254, 161, 161), rgb(254, 233, 161), rgb(177, 252, 160),
+            rgb(160, 201, 254), rgb(254, 160, 254), rgb(214, 162, 254));
+    --backgroundpokemonhover: linear-gradient(to bottom right, rgb(254, 161, 161), rgb(254, 233, 161), rgb(177, 252, 160),
+            rgb(160, 201, 254), rgb(254, 160, 254), rgb(214, 162, 254));
+    --backgroundmenuhover: linear-gradient(to right, rgb(254, 161, 161), rgb(254, 233, 161), rgb(177, 252, 160),
+            rgb(160, 201, 254), rgb(254, 160, 254), rgb(214, 162, 254));
+    --backgroundpokemon: rgb(240, 240, 240);
+    --backgroundid: radial-gradient(rgb(255, 255, 255), rgb(240, 240, 240), rgb(180, 180, 180));
     --colortitle: rgb(255, 204, 1);
-    --bordertitle: 2.5px rgb(50, 100, 176);
+    --bordertitle: rgb(50, 100, 176);
+    --titleshadow: white;
 }
 
 [data-theme="dark"] {
-    --primary: black;
-    --background: linear-gradient(to right, rgb(91, 152, 109), rgb(121, 97, 70), rgb(89, 133, 137));
-    --backgroundrainbow: linear-gradient(to bottom, rgb(136, 60, 60), rgb(112, 98, 52), rgb(70, 109, 62),
+    --primary: white;
+    --background: linear-gradient(to right, rgb(31, 82, 47), rgb(84, 59, 31), rgb(30, 80, 85));
+    --backgroundscrollbar: linear-gradient(to bottom, rgb(136, 60, 60), rgb(112, 98, 52), rgb(70, 109, 62),
+            rgb(68, 98, 137), rgb(125, 72, 125), rgb(114, 84, 137));
+    --backgroundpokemonhover: linear-gradient(to bottom right, rgb(91, 32, 32), rgb(83, 70, 30), rgb(35, 80, 27),
+            rgb(30, 54, 86), rgb(86, 31, 86), rgb(68, 32, 95));
+    --backgroundmenuhover: linear-gradient(to right, rgb(136, 60, 60), rgb(112, 98, 52), rgb(70, 109, 62),
     rgb(68, 98, 137), rgb(125, 72, 125), rgb(114, 84, 137));
-    --backgroundpokemon: linear-gradient(to bottom right, rgb(136, 60, 60), rgb(112, 98, 52), rgb(70, 109, 62),
-    rgb(68, 98, 137), rgb(125, 72, 125), rgb(114, 84, 137));
-    --backgroundtransparente: radial-gradient(rgb(0, 0, 0), rgb(0, 0, 0), rgb(240, 240, 240));
+    --backgroundpokemon: rgb(10, 10, 10);
+    --backgroundid: radial-gradient(rgb(0, 0, 0), rgb(0, 0, 0), rgb(240, 240, 240));
     --colortitle: var(--poison);
-    --bordertitle: 2.5px black;
+    --bordertitle: black;
+    --titleshadow: black;
 }
 
 * {
-    color: black;
+    color: var(--primary);
     font-family: sans-serif;
 }
 
 body {
-    background: linear-gradient(to right, rgb(147, 248, 176), rgb(244, 198, 146), rgb(157, 237, 246));
+    background: var(--background);
     margin: 0;
     min-height: 100vh;
 }
@@ -57,9 +65,9 @@ body {
 .title {
     font-family: Pokemon;
     text-decoration: none;
-    -webkit-text-stroke: 2.5px rgb(50, 100, 176);
-    color: rgb(255, 204, 1);
-    text-shadow: 0px 0px 15px white;
+    -webkit-text-stroke: 2.5px var(--bordertitle);
+    color: var(--colortitle);
+    text-shadow: 0px 0px 15px var(--titleshadow);
     letter-spacing: 0.5vh;
 }
 
@@ -87,11 +95,12 @@ nav {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, rgb(254, 161, 161), rgb(254, 233, 161), rgb(177, 252, 160),
-    rgb(160, 201, 254), rgb(254, 160, 254), rgb(214, 162, 254));
+    background: var(--backgroundscrollbar);
     border-radius: 5px;
 }
-
+::-webkit-scrollbar-track{
+    background-color: var(--titleshadow);
+}
 .image {
     padding-inline: 1rem;
     display: flex;
@@ -104,14 +113,12 @@ nav {
 }
 
 .pokemon:hover {
-    background: linear-gradient(to bottom right, rgb(254, 161, 161), rgb(254, 233, 161), rgb(177, 252, 160),
-    rgb(160, 201, 254), rgb(254, 160, 254), rgb(214, 162, 254));
-    text-shadow: 0px 0px 4px white;
+    background: var(--backgroundpokemonhover);
+    text-shadow: 0px 0px 4px var(--titleshadow);
 }
 
 .barra:hover {
-    background: linear-gradient(to right, rgb(254, 161, 161), rgb(254, 233, 161), rgb(177, 252, 160),
-    rgb(160, 201, 254), rgb(254, 160, 254), rgb(214, 162, 254));
+    background: var(--backgroundmenuhover);
 }
 
 .info {
@@ -123,9 +130,9 @@ nav {
 }
 
 .id {
-    background: radial-gradient(rgb(255, 255, 255), rgb(240, 240, 240), rgb(180, 180, 180));
-    box-shadow: 0 0 7.5px 0px black;
-    color: black;
+    background: var(--backgroundid);
+    box-shadow: 0 0 7.5px 0px var(--primary);
+    color: var(--primary);
     padding: 0.25rem 0.5rem;
     border-radius: 5px;
     font-size: 0.75rem;
@@ -153,56 +160,53 @@ nav {
     text-decoration: none;
 }
 
-
-/*
-
-    Modo oscuro
-
-*/
-
-/*
-*{
-    color: white;
-    font-family: sans-serif;
+.container-pokeball {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
 }
-body {
-    background: linear-gradient(to right, rgb(24, 82, 41), rgb(79, 53, 24), rgb(25, 73, 79));
-    margin: 0;
-    min-height: 100vh;
+.container-pokeball .panel {
+    position: absolute;
+    transition: .3s all;
+    width: 90px;
+    height: 180px;
+    border-radius: 15px;
+    transform: translateY(-100%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    display: none;
 }
-.title {
-    font-family: Pokemon;
-    text-decoration: none;
-    -webkit-text-stroke: 2.5px black;
-    color: var(--poison);
-    text-shadow: 0px 0px 15px black;
-    letter-spacing: 0.5vh;
+.container-pokeball .panel.active {
+    display: flex;
 }
-::-webkit-scrollbar-thumb{
-    background: linear-gradient(to bottom, rgb(72, 21, 21), rgb(60, 50, 18), rgb(24, 56, 17),
-    rgb(22, 44, 73), rgb(68, 20, 68), rgb(49, 21, 71));
-    border-radius: 5px;
+.container-pokeball .panel .oscuro {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: rgb(30, 30, 30);
+    transition: 0.3 all;
 }
-::-webkit-scrollbar-track{
-    background-color: black;
+.container-pokeball .panel .claro {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: rgb(255, 255, 50);
+    transition: .3 all;
 }
-
-.pokemon:hover {
-    background: linear-gradient(to bottom right, rgb(72, 21, 21), rgb(60, 50, 18), rgb(24, 56, 17),
-    rgb(22, 44, 73), rgb(68, 20, 68), rgb(49, 21, 71));
-    text-shadow: 0px 0px 4px white;
+.container-pokeball .pokeball {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 70px;
+    filter: sepia(50%);
+    transition: .4s ease;
+    animation: pulse 1.5s infinite;
 }
-.barra:hover {
-    background: linear-gradient(to right, rgb(72, 21, 21), rgb(60, 50, 18), rgb(24, 56, 17),
-    rgb(22, 44, 73), rgb(68, 20, 68), rgb(49, 21, 71));
+.container-pokeball .pokeball:hover {
+    filter: sepia(0);
+    transition: .4s ease;
 }
-.id {
-    background: radial-gradient(rgb(0, 0, 0), rgb(0, 0, 0), rgb(240, 240, 240));
-    box-shadow: 0 0 7.5px 0px rgb(255, 255, 255);
-    color: white;
-    padding: 0.25rem 0.5rem;
-    border-radius: 5px;
-    border: 1px solid white;
-    font-size: 0.75rem;
-    font-weight: 800;
-}*/
