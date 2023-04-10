@@ -78,8 +78,6 @@ function getStats(poke) {
 async function createChain(pokemon, pokemonChain) {
     var chain = pokemonChain.chain;
 
-    console.log(pokemon);
-
     var haveEvol = chain.evolves_to.length != 0;
 
     if (haveEvol) {
@@ -156,23 +154,45 @@ async function viewEvolves(chain) {
         div3.appendChild(div5);
         getTypes(poke);
         div3.appendChild(div6);
+
+        div6.innerHTML = checkEvolve(chain);
     }
-
-    /*div6.innerHTML = checkEvolve(pokemon);*/
-
 }
 
-function checkEvolve(poke) {
+function checkEvolve(chain) {
     var innerTrigger;
 
-    if (poke.chain.evolves_to[0].evolution_details[0].trigger.name == "level-up") {
-        innerTrigger = `Subir a nivel ${poke.chain.evolves_to[0].evolution_details[0].min_level}`;
+    console.log(chain);
+
+    if (chain.evolves_to.length == 0) {
+        if (chain.evolution_details[0].trigger.name == "level-up") {
+            innerTrigger = `Subir a nivel ${chain.evolution_details[0].min_level}`;
+        }
+        else if (chain.evolution_details[0].trigger.name == "use-item") {
+            innerTrigger = `Usar ${chain.evolution_details[0].item.name}`;
+        }
+        else if (chain.evolution_details[0].trigger.name == "trade") {
+            innerTrigger = `${chain.evolution_details[0].trigger.name}`;
+        }
     }
-    else if (poke.chain.evolves_to[0].evolution_details[0].trigger.name == "use-item") {
-        innerTrigger = `Usar ${poke.chain.evolves_to[0].evolution_details[0].item.name}`;
+    else if (chain.evolves_to.length != 0 && chain.evolution_details.length != 0) {
+        if (chain.evolves_to[0].evolution_details[0].trigger.name == "level-up" || chain.evolution_details[0].trigger.name == "level-up") {
+            if (chain.evolution_details[0].min_happiness == null && chain.evolution_details[0].held_item == null && chain.evolution_details[0].known_move == null) {
+                innerTrigger = `Subir a nivel ${chain.evolution_details[0].min_level}`;
+            }
+            else if (chain.evolution_details[0].min_happiness != null || chain.evolution_details[0].held_item != null || chain.evolution_details[0].known_move != null) {
+                innerTrigger = "";
+            }
+        }
+        else if (chain.evolution_details[0].trigger.name == "use-item") {
+            innerTrigger = `Usar ${chain.evolution_details[0].item.name}`;
+        }
+        else if (chain.evolution_details[0].trigger.name == "trade") {
+            innerTrigger = `${chain.evolution_details[0].trigger.name}`;
+        }
     }
-    else if (poke.chain.evolves_to[0].evolution_details[0].trigger.name == "trade") {
-        innerTrigger = `${poke.chain.evolves_to[0].evolution_details[0].trigger.name}`;
+    else {
+        innerTrigger = "";
     }
 
     return innerTrigger;
