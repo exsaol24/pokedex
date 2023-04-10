@@ -29,7 +29,7 @@ function viewPokemon(poke) {
     img.src = poke.sprites.front_default;
     /*img.src = poke.sprites.front_shiny;*/
     /*img.src = poke.sprites.other["official-artwork"].front_default;*/
-    /*img.src = poke.sprites.other.home.front_default;*/
+    /*img.src = poke.sprites.other.home.front_default*/
     img.alt = poke.name;
 
     var div3 = document.createElement("div");

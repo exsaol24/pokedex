@@ -51,8 +51,8 @@ function id0Izqda(poke) {
 
 var pokeball = document.getElementById('pokeball');
 var panel = document.getElementById('panel');
-var btnJolteon = document.getElementById('btn-jolteon');
-var btnUmbreon = document.getElementById('btn-umbreon');
+var btnJolteon = document.getElementById('btn-light');
+var btnUmbreon = document.getElementById('btn-dark');
 var containerPokeball = document.getElementById('pokeball');
 
 pokeball.addEventListener('click', () => {

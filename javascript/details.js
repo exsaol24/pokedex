@@ -41,6 +41,7 @@ async function getChain(url) {
 function viewPokemon(poke) {
     var img = document.getElementsByTagName("img")[0];
     img.src = poke.sprites.front_default;
+    /*img.src = poke.sprites.front_shiny;*/
     /*img.src = poke.sprites.other["official-artwork"].front_default;*/
     /*img.src = poke.sprites.other.home.front_default;*/
     img.alt = poke.name;
@@ -51,7 +52,6 @@ function viewPokemon(poke) {
     var name = document.getElementsByClassName("name")[0];
     name.innerHTML = `${poke.name}`;
 
-    var types = document.getElementsByClassName("types")[0];
     getTypes(poke);
 
     var pweight = document.getElementsByClassName("weight")[0];
@@ -76,6 +76,9 @@ function getStats(poke) {
 }
 
 async function createChain(pokemon, pokemonChain) {
+    /*var evolves = document.getElementById("evolves");
+    var numero = evolves.length;*/
+
     var chain = pokemonChain.chain;
 
     var haveEvol = chain.evolves_to.length != 0;
@@ -94,8 +97,11 @@ async function createChain(pokemon, pokemonChain) {
             }
         }
         chain = chain.evolves_to[0];
-
     }
+
+    /*if (numero == 1) {
+        evolves.innerHTML = "";
+    }*/
 }
 
 async function viewEvolves(chain) {
@@ -169,10 +175,24 @@ function checkEvolve(chain) {
             innerTrigger = `Subir a nivel ${chain.evolution_details[0].min_level}`;
         }
         else if (chain.evolution_details[0].trigger.name == "use-item") {
-            innerTrigger = `Usar ${chain.evolution_details[0].item.name}`;
+            if (chain.evolution_details[0].item.name == "leaf-stone") {
+                innerTrigger = `Usar Piedra Hoja`;
+            }
+            else if (chain.evolution_details[0].item.name == "water-stone") {
+                innerTrigger = `Usar Piedra Agua`;
+            }
+            else if (chain.evolution_details[0].item.name == "fire-stone") {
+                innerTrigger = `Usar Piedra Fuego`;
+            }
+            else if (chain.evolution_details[0].item.name == "thunder-stone") {
+                innerTrigger = `Usar Piedra Trueno`;
+            }
+            else if (chain.evolution_details[0].item.name == "moon-stone") {
+                innerTrigger = `Usar Piedra Lunar`;
+            }
         }
         else if (chain.evolution_details[0].trigger.name == "trade") {
-            innerTrigger = `${chain.evolution_details[0].trigger.name}`;
+            innerTrigger = `Intercambio`;
         }
     }
     else if (chain.evolves_to.length != 0 && chain.evolution_details.length != 0) {
@@ -180,15 +200,29 @@ function checkEvolve(chain) {
             if (chain.evolution_details[0].min_happiness == null && chain.evolution_details[0].held_item == null && chain.evolution_details[0].known_move == null) {
                 innerTrigger = `Subir a nivel ${chain.evolution_details[0].min_level}`;
             }
-            else if (chain.evolution_details[0].min_happiness != null || chain.evolution_details[0].held_item != null || chain.evolution_details[0].known_move != null) {
+            else {
                 innerTrigger = "";
             }
         }
         else if (chain.evolution_details[0].trigger.name == "use-item") {
-            innerTrigger = `Usar ${chain.evolution_details[0].item.name}`;
+            if (chain.evolution_details[0].item.name == "leaf-stone") {
+                innerTrigger = `Usar Piedra Hoja`;
+            }
+            else if (chain.evolution_details[0].item.name == "water-stone") {
+                innerTrigger = `Usar Piedra Agua`;
+            }
+            else if (chain.evolution_details[0].item.name == "fire-stone") {
+                innerTrigger = `Usar Piedra Fuego`;
+            }
+            else if (chain.evolution_details[0].item.name == "thunder-stone") {
+                innerTrigger = `Usar Piedra Trueno`;
+            }
+            else if (chain.evolution_details[0].item.name == "moon-stone") {
+                innerTrigger = `Usar Piedra Lunar`;
+            }
         }
         else if (chain.evolution_details[0].trigger.name == "trade") {
-            innerTrigger = `${chain.evolution_details[0].trigger.name}`;
+            innerTrigger = `Intercambio`;
         }
     }
     else {
