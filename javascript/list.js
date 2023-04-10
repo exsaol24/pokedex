@@ -82,10 +82,47 @@ searchInput.addEventListener('input', () => {
   searchPokemon(search);
 });
 
-var images = [
-    
-];
+var images = new Array();
+images[0] = new Image();
+images[0].src = '../images/PokeBallRandom/cherish-ball.png';
+images[1] = new Image();
+images[1].src = '../images/PokeBallRandom/dive-ball.png';
+images[2] = new Image();
+images[2].src = '../images/PokeBallRandom/dusk-ball.png';
+images[3] = new Image();
+images[3].src = '../images/PokeBallRandom/great-ball.png';
+images[4] = new Image();
+images[4].src = '../images/PokeBallRandom/heal-ball.png';
+images[5] = new Image();
+images[5].src = '../images/PokeBallRandom/luxury-ball.png';
+images[6] = new Image();
+images[6].src = '../images/PokeBallRandom/master-ball.png';
+images[7] = new Image();
+images[7].src = '../images/PokeBallRandom/nest-ball.png';
+images[8] = new Image();
+images[8].src = '../images/PokeBallRandom/net-ball.png';
+images[9] = new Image();
+images[9].src = '../images/PokeBallRandom/poke-ball.png';
+images[10] = new Image();
+images[10].src = '../images/PokeBallRandom/premier-ball.png';
+images[11] = new Image();
+images[11].src = '../images/PokeBallRandom/quick-ball.png';
+images[12] = new Image();
+images[12].src = '../images/PokeBallRandom/repeat-ball.png';
+images[13] = new Image();
+images[13].src = '../images/PokeBallRandom/safari-ball.png';
+images[14] = new Image();
+images[14].src = '../images/PokeBallRandom/timer-ball.png';
+images[15] = new Image();
+images[15].src = '../images/PokeBallRandom/ultra-ball.png';
 
-function searchImage() {
-    
-}
+random = Math.round(Math.random()*(15 - 0));
+
+var randomImage = images[random];
+randomImage.setAttribute("id", "buscador-imagen");
+randomImage.setAttribute("alt", "Foto Buscador");
+
+console.log(random);
+
+var barra = document.getElementsByClassName("barra")[0];
+barra.appendChild(randomImage);

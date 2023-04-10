@@ -28,21 +28,19 @@ async function getPokemonDetails(id) {
 
 async function getSpecies(url)
 {
-    var request = await fetch(url);
-    var data = await request.json();
-
-    return data;
+    
 }
 
 async function getChain(url) {
-    var species = await getSpecies(url);
+    var request1 = await fetch(url);
+    var data1 = await request1.json();
 
-    var urlChain = species.evolution_chain.url;
+    var urlChain = data1.evolution_chain.url;
 
-    var request = await fetch(urlChain);
-    var data = await request.json();
+    var request2 = await fetch(urlChain);
+    var data2 = await request2.json();
 
-    return data;
+    return data2;
 }
 
 function viewPokemon(poke) {
@@ -87,6 +85,10 @@ async function createChain(pokemon, pokemonChain) {
 
     var haveEvol = chain.evolves_to.length != 0;
 
+    /* var a = 1;
+
+    console.log(chain); */
+
     if (haveEvol) {
         await viewEvolves(chain);
     }
@@ -106,8 +108,6 @@ async function createChain(pokemon, pokemonChain) {
     var evolves = document.getElementById("evolves");
     var number = evolves.querySelectorAll("a").length;
 
-    console.log(number);
-
     if (number == 1) {
         evolves.innerHTML = "";
     }
@@ -115,8 +115,6 @@ async function createChain(pokemon, pokemonChain) {
 
 async function viewEvolves(chain) {
     var pokemonId = chain.species.url.split('/')[6];
-
-    console.log(chain);
 
     if (pokemonId <= 151) {
 
