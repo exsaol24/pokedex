@@ -81,3 +81,11 @@ searchInput.addEventListener('input', () => {
     var search = searchInput.value;
   searchPokemon(search);
 });
+
+var images = [
+    
+];
+
+function searchImage() {
+    
+}

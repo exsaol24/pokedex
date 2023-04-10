@@ -26,16 +26,23 @@ async function getPokemonDetails(id) {
     return data;
 }
 
+async function getSpecies(url)
+{
+    var request = await fetch(url);
+    var data = await request.json();
+
+    return data;
+}
+
 async function getChain(url) {
-    var request1 = await fetch(url);
-    var data1 = await request1.json();
+    var species = await getSpecies(url);
 
-    var urlChain = data1.evolution_chain.url;
+    var urlChain = species.evolution_chain.url;
 
-    var request2 = await fetch(urlChain);
-    var data2 = await request2.json();
+    var request = await fetch(urlChain);
+    var data = await request.json();
 
-    return data2;
+    return data;
 }
 
 function viewPokemon(poke) {
@@ -76,9 +83,6 @@ function getStats(poke) {
 }
 
 async function createChain(pokemon, pokemonChain) {
-    /*var evolves = document.getElementById("evolves");
-    var numero = evolves.length;*/
-
     var chain = pokemonChain.chain;
 
     var haveEvol = chain.evolves_to.length != 0;
@@ -99,15 +103,23 @@ async function createChain(pokemon, pokemonChain) {
         chain = chain.evolves_to[0];
     }
 
-    /*if (numero == 1) {
+    var evolves = document.getElementById("evolves");
+    var number = evolves.querySelectorAll("a").length;
+
+    console.log(number);
+
+    if (number == 1) {
         evolves.innerHTML = "";
-    }*/
+    }
 }
 
 async function viewEvolves(chain) {
     var pokemonId = chain.species.url.split('/')[6];
 
+    console.log(chain);
+
     if (pokemonId <= 151) {
+
         var poke = await getPokemonDetails(pokemonId);
 
         var evolves = document.getElementById("evolves");
@@ -168,7 +180,7 @@ async function viewEvolves(chain) {
 function checkEvolve(chain) {
     var innerTrigger;
 
-    console.log(chain);
+    var species = getSpecies();
 
     if (chain.evolves_to.length == 0) {
         if (chain.evolution_details[0].trigger.name == "level-up") {
