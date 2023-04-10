@@ -60,3 +60,24 @@ function viewPokemon(poke) {
     div3.appendChild(div5);
     getTypes(poke);
 }
+
+var searchInput = document.getElementById('search-input');
+
+function searchPokemon(search) {
+  pokemonList.innerHTML = ''; // Vaciar la lista de Pokemons
+  const filteredPokemon = arrayPokemon.filter((pokemon) => {
+    var name = pokemon.name.toLowerCase();
+    var term = search.toLowerCase();
+    return name.includes(term);
+  });
+
+  filteredPokemon.forEach((pokemon) => {
+    viewPokemon(pokemon);
+  });
+}
+
+
+searchInput.addEventListener('input', () => {
+    var search = searchInput.value;
+  searchPokemon(search);
+});

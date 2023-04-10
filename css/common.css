@@ -187,7 +187,7 @@ nav {
     border-radius: 50%;
     cursor: pointer;
     border: 1px solid black;
-    background-color: var(--ghost);
+    background-color: var(--dark);
     transition: 0.3 all;
 }
 
