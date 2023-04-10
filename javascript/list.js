@@ -20,7 +20,6 @@ function viewPokemon(poke) {
 
     var a = document.createElement("a");
     a.classList.add("link");
-    /*a.setAttribute("target", "blank");*/
     a.setAttribute("href", `../html/details.html?id=${poke.id}`);
 
     var div2 = document.createElement("div");

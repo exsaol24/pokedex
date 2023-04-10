@@ -90,70 +90,73 @@ async function createChain(pokemon, pokemonChain) {
         if (chain.evolves_to.length == 0) {
             haveEvol = false;
         }
-        if (chain.evolution_details.length != 0) {
-            await viewEvolves(chain);
+        if (chain.evolves_to.length != 0) {
+            for (let i = 0; i < chain.evolves_to.length; i++) {
+                await viewEvolves(chain.evolves_to[i]);
+            }
         }
         chain = chain.evolves_to[0];
-        
+
     }
 }
 
 async function viewEvolves(chain) {
     var pokemonId = chain.species.url.split('/')[6];
 
-    var poke = await getPokemonDetails(pokemonId);
+    if (pokemonId <= 151) {
+        var poke = await getPokemonDetails(pokemonId);
 
-    var evolves = document.getElementById("evolves");
+        var evolves = document.getElementById("evolves");
 
-    var div1 = document.createElement("div");
-    div1.classList.add("pokemon");
+        var div1 = document.createElement("div");
+        div1.classList.add("pokemon");
 
-    var a = document.createElement("a");
-    a.classList.add("link");
-    /*a.setAttribute("target", "blank");*/
-    a.setAttribute("href", `../html/details.html?id=${poke.id}`);
+        var a = document.createElement("a");
+        a.classList.add("link");
+        a.setAttribute("href", `../html/details.html?id=${poke.id}`);
 
-    var div2 = document.createElement("div");
-    div2.classList.add("image");
+        var div2 = document.createElement("div");
+        div2.classList.add("image");
 
-    var img = document.createElement("img");
-    img.src = poke.sprites.front_default;
-    /*img.src = poke.sprites.front_shiny;*/
-    /*img.src = poke.sprites.other["official-artwork"].front_default;*/
-    /*img.src = poke.sprites.other.home.front_default;*/
-    img.alt = poke.name;
+        var img = document.createElement("img");
+        img.src = poke.sprites.front_default;
+        /*img.src = poke.sprites.front_shiny;*/
+        /*img.src = poke.sprites.other["official-artwork"].front_default;*/
+        /*img.src = poke.sprites.other.home.front_default;*/
+        img.alt = poke.name;
 
-    var div3 = document.createElement("div");
-    div3.classList.add("info");
+        var div3 = document.createElement("div");
+        div3.classList.add("info");
 
-    var div4 = document.createElement("div");
-    div4.classList.add("container1");
+        var div4 = document.createElement("div");
+        div4.classList.add("container1");
 
-    var p1 = document.createElement("p");
-    p1.classList.add("id");
-    p1.innerHTML = `#${id0Izqda(poke)}`;
+        var p1 = document.createElement("p");
+        p1.classList.add("id");
+        p1.innerHTML = `#${id0Izqda(poke)}`;
 
-    var h2 = document.createElement("h2");
-    h2.classList.add("name");
-    h2.innerHTML = `${poke.name}`;
+        var h2 = document.createElement("h2");
+        h2.classList.add("name");
+        h2.innerHTML = `${poke.name}`;
 
-    var div5 = document.createElement("div");
-    div5.classList.add("types");
+        var div5 = document.createElement("div");
+        div5.classList.add("types");
 
-    var div6 = document.createElement("div");
-    div6.classList.add("trigger");
+        var div6 = document.createElement("div");
+        div6.classList.add("trigger");
 
-    evolves.appendChild(div1);
-    div1.appendChild(a);
-    a.appendChild(div2);
-    div2.appendChild(img);
-    a.appendChild(div3);
-    div3.appendChild(div4);
-    div4.appendChild(p1);
-    div4.appendChild(h2);
-    div3.appendChild(div5);
-    getTypes(poke);
-    div3.appendChild(div6);
+        evolves.appendChild(div1);
+        div1.appendChild(a);
+        a.appendChild(div2);
+        div2.appendChild(img);
+        a.appendChild(div3);
+        div3.appendChild(div4);
+        div4.appendChild(p1);
+        div4.appendChild(h2);
+        div3.appendChild(div5);
+        getTypes(poke);
+        div3.appendChild(div6);
+    }
 
     /*div6.innerHTML = checkEvolve(pokemon);*/
 
