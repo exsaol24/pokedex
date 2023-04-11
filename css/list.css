@@ -3,6 +3,7 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
 }
+
 /*
 @media screen and (min-width: 450px) {
     .all-pokemon {
@@ -58,10 +59,6 @@
     margin: auto;
 }
 
-#shiny {
-    margin: auto;
-}
-
 main {
     padding: 2rem;
     max-width: 1150px;
@@ -74,8 +71,8 @@ main {
 }
 
 #buscador-imagen {
-    margin-left: 647px;
-    margin-top: 4px;
+    margin-left: 590px;
+    margin-top: 12px;
     width: 50px;
     position: absolute;
 }
@@ -84,16 +81,69 @@ main {
     width: 100%;
     padding: 12px 20px;
     margin: 8px;
-    margin-left: 100%;
+    margin: auto;
     box-sizing: border-box;
     border: none;
     border-radius: 4px;
     background-color: var(--backgroundpokemon);
     font-size: 16px;
-    /*border: 1px solid var(--primary);*/
 }
 
-#easter-egg{
+#easter-egg {
     position: absolute;
     width: 50px;
+    margin-top: 7.5px;
+    margin-left: 5px;
+}
+
+.shiny-container #shinyPanel {
+    position: absolute;
+    transition: 0.3s all;
+    width: 90px;
+    height: 70px;
+    border-radius: 15px;
+    padding-right: 2.5%;
+    transform: translateX(-100%);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    display: none;
+}
+
+.shiny-container #shinyPanel.active {
+    display: flex;
+}
+
+.shiny-container #shinyPanel .shiny {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: var(--backgroundpokemon);
+    cursor: pointer;
+    transition: 0.3 all;
+    margin-right: 5px;
+}
+
+.shiny-container #shinyPanel .default {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: var(--backgroundpokemon);
+    cursor: pointer;
+    transition: 0.3 all;
+    margin-right: 5px;
+}
+
+.shiny-container #shiny-mode {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 70px;
+    filter: sepia(50%);
+    transition: 0.4s ease;
+    animation: 1.5s infinite;
+}
+
+.shiny-container #shiny-mode:hover {
+    filter: sepia(0);
+    transition: 0.4s ease;
 }

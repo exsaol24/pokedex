@@ -50,6 +50,17 @@ function viewPokemon(poke) {
     /*img.src = poke.sprites.other.home.front_default;*/
     img.alt = poke.name;
 
+    var defaultBtn = document.getElementById("default-btn");
+    var shinyBtn = document.getElementById("shiny-btn");
+
+    defaultBtn.addEventListener("click", function () {
+        img.src = poke.sprites.front_default;
+    });
+
+    shinyBtn.addEventListener("click", function () {
+        img.src = poke.sprites.front_shiny;
+    });
+
     var pid = document.getElementsByClassName("id")[0];
     pid.innerHTML = `#${id0Izqda(poke)}`;
 
@@ -141,6 +152,17 @@ async function viewEvolves(chain) {
         /*img.src = poke.sprites.other["official-artwork"].front_default;*/
         /*img.src = poke.sprites.other.home.front_default;*/
         img.alt = poke.name;
+
+        var defaultBtn = document.getElementById("default-btn");
+        var shinyBtn = document.getElementById("shiny-btn");
+
+        defaultBtn.addEventListener("click", function () {
+            img.src = poke.sprites.front_default;
+        });
+
+        shinyBtn.addEventListener("click", function () {
+            img.src = poke.sprites.front_shiny;
+        });
 
         var div3 = document.createElement("div");
         div3.classList.add("info");
@@ -243,4 +265,25 @@ function checkEvolve(chain) {
     }
 
     return innerTrigger;
+}
+
+pokemonImages();
+
+function pokemonImages() {
+  random = Math.round(Math.random() * (8 - 0));
+
+  var randomDefault = document.createElement("img");
+  var randomShiny = document.createElement("img");
+  randomDefault.src = `../images/FotosRandom/Default/${[random]}.png`;
+  randomShiny.src = `../images/FotosRandom/Shiny/${[random]}.png`;
+  randomDefault.classList.add("default");
+  randomDefault.setAttribute("id", "default-btn");
+  randomDefault.setAttribute("alt", "Modo Normal");
+  randomShiny.classList.add("shiny");
+  randomShiny.setAttribute("id", "shiny-btn");
+  randomShiny.setAttribute("alt", "Modo Shiny");
+
+  var shinyPanel = document.getElementById("shinyPanel");
+  shinyPanel.appendChild(randomDefault);
+  shinyPanel.appendChild(randomShiny);
 }

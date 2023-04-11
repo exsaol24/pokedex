@@ -164,7 +164,7 @@ nav {
     left: 5px;
 }
 
-.container-pokeball .panel {
+.container-pokeball #panel {
     position: absolute;
     transition: .3s all;
     width: 90px;
@@ -177,11 +177,11 @@ nav {
     display: none;
 }
 
-.container-pokeball .panel.active {
+.container-pokeball #panel.active {
     display: flex;
 }
 
-.container-pokeball .panel .oscuro {
+.container-pokeball #panel .oscuro {
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -189,9 +189,10 @@ nav {
     border: 1px solid black;
     background-color: var(--dark);
     transition: 0.3 all;
+    margin-right: 15px;
 }
 
-.container-pokeball .panel .claro {
+.container-pokeball #panel .claro {
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -199,6 +200,7 @@ nav {
     border: 1px solid black;
     background-color: rgb(255, 255, 50);
     transition: 0.3 all;
+    margin-right: 15px;
 }
 
 .container-pokeball .pokeball {

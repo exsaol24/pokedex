@@ -100,3 +100,60 @@ main {
     padding: 2rem;
     margin: auto;
 }
+
+.shiny-container {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+}
+
+.shiny-container #shinyPanel {
+    position: absolute;
+    transition: .3s all;
+    width: 90px;
+    height: 180px;
+    border-radius: 15px;
+    transform: translateY(-100%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    display: none;
+}
+
+.shiny-container #shinyPanel.active {
+    display: flex;
+}
+
+.shiny-container #shinyPanel .shiny {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: var(--backgroundpokemon);
+    cursor: pointer;
+    transition: 0.3 all;
+    margin-right: 20px;
+}
+
+.shiny-container #shinyPanel .default {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: var(--backgroundpokemon);
+    cursor: pointer;
+    transition: 0.3 all;
+    margin-right: 20px;
+}
+
+.shiny-container #shiny-mode {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 70px;
+    filter: sepia(50%);
+    transition: 0.4s ease;
+    animation: 1.5s infinite;
+}
+
+.shiny-container #shiny-mode:hover {
+    filter: sepia(0);
+    transition: 0.4s ease;
+}

@@ -75,3 +75,11 @@ btnJolteon.addEventListener('click', () => {
 });
 
 setTheme(localStorage.getItem('theme') || preferedColorScheme);
+
+var shinyMode = document.getElementById('shiny-mode');
+var shinyPanel = document.getElementById('shinyPanel');
+var containerShiny = document.getElementById('shiny-mode');
+
+shinyMode.addEventListener('click', () => {
+    shinyPanel.classList.toggle('active');
+})
