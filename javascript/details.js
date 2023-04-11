@@ -26,9 +26,8 @@ async function getPokemonDetails(id) {
     return data;
 }
 
-async function getSpecies(url)
-{
-    
+async function getSpecies(url) {
+
 }
 
 async function getChain(url) {
@@ -85,9 +84,9 @@ async function createChain(pokemon, pokemonChain) {
 
     var haveEvol = chain.evolves_to.length != 0;
 
-    /* var a = 1;
+    var evolves = document.getElementById("evolves");
 
-    console.log(chain); */
+    /*console.log(chain);*/
 
     if (haveEvol) {
         await viewEvolves(chain);
@@ -99,13 +98,17 @@ async function createChain(pokemon, pokemonChain) {
         }
         if (chain.evolves_to.length != 0) {
             for (let i = 0; i < chain.evolves_to.length; i++) {
-                await viewEvolves(chain.evolves_to[i]);
+                if (chain.species.name == "tyrogue") {
+                    evolves.innerHTML = "";
+                }
+                else {
+                    await viewEvolves(chain.evolves_to[i]);
+                }
             }
         }
         chain = chain.evolves_to[0];
     }
 
-    var evolves = document.getElementById("evolves");
     var number = evolves.querySelectorAll("a").length;
 
     if (number == 1) {

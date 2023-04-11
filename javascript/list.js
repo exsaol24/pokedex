@@ -122,7 +122,7 @@ var randomImage = images[random];
 randomImage.setAttribute("id", "buscador-imagen");
 randomImage.setAttribute("alt", "Foto Buscador");
 
-console.log(random);
+/*console.log(random);*/
 
 var barra = document.getElementsByClassName("barra")[0];
 barra.appendChild(randomImage);
