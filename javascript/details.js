@@ -14,8 +14,6 @@ async function getDetails() {
 
     viewPokemon(pokemonDetails);
 
-
-
     await createChain(pokemonDetails, pokemonChain);
 }
 
@@ -100,7 +98,7 @@ async function createChain(pokemon, pokemonChain) {
     /*console.log(chain);*/
 
     if (haveEvol) {
-        await viewEvolves(chain);
+        await viewEvolves(chain, pokemon);
     }
 
     while (haveEvol) {
@@ -113,7 +111,7 @@ async function createChain(pokemon, pokemonChain) {
                     evolves.innerHTML = "";
                 }
                 else {
-                    await viewEvolves(chain.evolves_to[i]);
+                    await viewEvolves(chain.evolves_to[i], pokemon);
                 }
             }
         }
@@ -127,7 +125,7 @@ async function createChain(pokemon, pokemonChain) {
     }
 }
 
-async function viewEvolves(chain) {
+async function viewEvolves(chain, pokemon) {
     var pokemonId = chain.species.url.split('/')[6];
 
     if (pokemonId <= 151) {
@@ -178,6 +176,16 @@ async function viewEvolves(chain) {
         h2.classList.add("name");
         h2.innerHTML = `${poke.name}`;
 
+        if (poke.name == pokemon.name) {
+            h2.style.borderRadius = "10px";
+            h2.style.paddingBottom = "5px";
+            h2.style.paddingTop = "5px";
+            h2.style.paddingLeft = "10px";
+            h2.style.paddingRight = "10px";
+            h2.style.boxShadow = "0 0 15px 0px var(--primary)";
+            h2.style.background = "var(--backgroundpokemon)";
+        }
+        
         var div5 = document.createElement("div");
         div5.classList.add("types");
 
