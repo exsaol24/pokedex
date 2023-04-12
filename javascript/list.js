@@ -27,9 +27,6 @@ function viewPokemon(poke) {
 
   var img = document.createElement("img");
   img.src = poke.sprites.front_default;
-  /*img.src = poke.sprites.front_shiny;*/
-  /*img.src = poke.sprites.other["official-artwork"].front_default;*/
-  /*img.src = poke.sprites.other.home.front_default*/
   img.alt = poke.name;
 
   var defaultBtn = document.getElementById("default-btn");
@@ -75,7 +72,7 @@ function viewPokemon(poke) {
 var searchInput = document.getElementById('search-input');
 
 function searchPokemon(search) {
-  pokemonList.innerHTML = ''; // Vaciar la lista de Pokemons
+  pokemonList.innerHTML = '';
   const filteredPokemon = arrayPokemon.filter((pokemon) => {
     var name = pokemon.name.toLowerCase();
     var term = search.toLowerCase();

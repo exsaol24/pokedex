@@ -24,10 +24,6 @@ async function getPokemonDetails(id) {
     return data;
 }
 
-async function getSpecies(url) {
-
-}
-
 async function getChain(url) {
     var request1 = await fetch(url);
     var data1 = await request1.json();
@@ -43,9 +39,6 @@ async function getChain(url) {
 function viewPokemon(poke) {
     var img = document.getElementsByTagName("img")[0];
     img.src = poke.sprites.front_default;
-    /*img.src = poke.sprites.front_shiny;*/
-    /*img.src = poke.sprites.other["official-artwork"].front_default;*/
-    /*img.src = poke.sprites.other.home.front_default;*/
     img.alt = poke.name;
 
     var defaultBtn = document.getElementById("default-btn");
@@ -94,8 +87,6 @@ async function createChain(pokemon, pokemonChain) {
     var haveEvol = chain.evolves_to.length != 0;
 
     var evolves = document.getElementById("evolves");
-
-    /*console.log(chain);*/
 
     if (haveEvol) {
         await viewEvolves(chain, pokemon);
@@ -146,9 +137,6 @@ async function viewEvolves(chain, pokemon) {
 
         var img = document.createElement("img");
         img.src = poke.sprites.front_default;
-        /*img.src = poke.sprites.front_shiny;*/
-        /*img.src = poke.sprites.other["official-artwork"].front_default;*/
-        /*img.src = poke.sprites.other.home.front_default;*/
         img.alt = poke.name;
 
         var defaultBtn = document.getElementById("default-btn");
@@ -210,8 +198,6 @@ async function viewEvolves(chain, pokemon) {
 
 function checkEvolve(chain) {
     var innerTrigger;
-
-    var species = getSpecies();
 
     if (chain.evolves_to.length == 0) {
         if (chain.evolution_details[0].trigger.name == "level-up") {
