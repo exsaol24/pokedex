@@ -96,7 +96,7 @@ function randomPokeball() {
   random = Math.round(Math.random() * (15 - 0));
 
   var randomImage = document.createElement("img");
-  randomImage.src = `images/PokeballRandom/${[random]}.png`;
+  randomImage.src = `images/PokeBallRandom/${[random]}.png`;
   randomImage.setAttribute("id", "buscador-imagen");
   randomImage.setAttribute("alt", "Foto Buscador");
 
