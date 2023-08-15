@@ -26,7 +26,15 @@ function viewPokemon(poke) {
   div2.classList.add("image");
 
   var img = document.createElement("img");
+
   img.src = poke.sprites.front_default;
+  /* img.src = poke.sprites.other.home.front_default;
+  img.src = poke.sprites.other["official-artwork"].front_default;
+  img.src = poke.sprites.versions["generation-ii"].silver.front_transparent;
+  img.src = poke.sprites.versions["generation-iv"]["heartgold-soulsilver"].front_default;
+  img.src = poke.sprites.versions["generation-v"]["black-white"].animated.front_default; */
+  
+
   img.alt = poke.name;
 
   var defaultBtn = document.getElementById("default-btn");
